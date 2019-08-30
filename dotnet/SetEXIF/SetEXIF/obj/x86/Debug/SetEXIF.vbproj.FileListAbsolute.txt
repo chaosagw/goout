@@ -1,0 +1,17 @@
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\SetEXIF.exe
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\SetEXIF.pdb
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\SetEXIF.xml
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\ConvBL←→XY.dll
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\ConvBL←→XY.pdb
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\bin\Debug\ConvBL←→XY.xml
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.Form1.resources
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.Resources.resources
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.exe
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.xml
+E:\#work\#Visual Studio\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.pdb
+C:\KKC\work\vs\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.exe
+C:\KKC\work\vs\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.xml
+C:\KKC\work\vs\Projects\SetEXIF\SetEXIF\obj\x86\Debug\SetEXIF.pdb

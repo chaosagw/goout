@@ -1,0 +1,155 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SwitchLyerLabels
+</name>
+</assembly>
+<members>
+<member name="T:SwitchLyerLabels.My.ThisAddIn">
+<summary>
+A class for looking up declarative information in the associated configuration xml file (.esriaddinx).
+</summary>
+</member>
+<member name="T:SwitchLyerLabels.My.ThisAddIn.IDs">
+<summary>
+A class for looking up Add-in id strings declared in the associated configuration xml file (.esriaddinx).
+</summary>
+</member>
+<member name="P:SwitchLyerLabels.My.ThisAddIn.IDs.SwitchLbl">
+<summary>
+Returns 'RKKC_SwitchLyerLabels_SwitchLbl', the id declared for Add-in Button class 'SwitchLbl'
+</summary>
+</member>
+<member name="M:SwitchLyerLabels.My.Internal.AddInStartupObject.GetThis">
+ <summary>
+ Expose this instance of Add-in class externally
+ </summary>
+</member>
+<member name="T:SwitchLyerLabels.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:SwitchLyerLabels.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:SwitchLyerLabels.My.Resources.Resources.Culture">
+<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="T:SwitchLyerLabels.SwitchLbl">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="F:SwitchLyerLabels.SwitchLbl.m_ActiveViewEventsAfterDraw">
+ <summary>
+ セクション: イベント ハンドラの宣言
+ </summary>
+ <remarks>
+ 変数の接頭語'm_'はメンバ変数を意味します。 
+ これはこのクラス内で使用するグローバル変数を意味します。
+ </remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.SetupActiveViewEvents(ESRI.ArcGIS.Carto.IMap)">
+ <summary>
+ セクション: IActiveViewEventsの全てのイベント ハンドラの設定
+ </summary>
+ <param name="map">イベント ハンドラを設定するためのIMapインタフェース</param>
+ <remarks>全てのイベント ハンドラを設定する必要はありません。 
+ 使用したいイベント ハンドラを選択することができます。</remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.RemoveActiveViewEvents(ESRI.ArcGIS.Carto.IMap)">
+ <summary>
+ セクション: IActiveViewEventsの全てのイベント ハンドラを削除します。
+ </summary>
+ <param name="map">イベント ハンドラを削除するためのIMapインタフェース</param>
+ <remarks>全てのイベント ハンドラを削除する必要はありません。 
+ 使用したいイベント ハンドラを選択することができます。</remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsAfterDraw(ESRI.ArcGIS.Display.IDisplay,ESRI.ArcGIS.Carto.esriViewDrawPhase)">
+ <summary>
+ AfterDrawイベント ハンドラ
+ </summary>
+ <param name="Display"></param>
+ <param name="phase"></param>
+ <remarks>セクション: イベントに機能を追加するために記述するカスタム関数</remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsItemDraw(System.Int16,ESRI.ArcGIS.Display.IDisplay,ESRI.ArcGIS.esriSystem.esriDrawPhase)">
+ <summary>
+ ItemDrawイベント ハンドラ
+ </summary>
+ <param name="Index"></param>
+ <param name="Display"></param>
+ <param name="phase"></param>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsContentsChanged">
+ <summary>
+ ContentsChangedイベント ハンドラ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsContentsCleared">
+ <summary>
+ ContentsClearedイベント ハンドラ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsFocusMapChanged">
+ <summary>
+ FocusMapChangedイベント ハンドラ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsItemAdded(System.Object)">
+ <summary>
+ ItemAddedイベント ハンドラ
+ </summary>
+ <param name="Item"></param>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsItemDeleted(System.Object)">
+ <summary>
+ ItemDeletedイベント ハンドラ
+ </summary>
+ <param name="Item"></param>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsItemReordered(System.Object,System.Int32)">
+ <summary>
+ ItemReorderedイベント ハンドラ
+ </summary>
+ <param name="Item"></param>
+ <param name="toIndex"></param>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsSelectionChanged">
+ <summary>
+ SelectionChangedイベント ハンドラ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsSpatialReferenceChanged">
+ <summary>
+ SpatialReferenceChangedイベント ハンドラ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SwitchLyerLabels.SwitchLbl.OnActiveViewEventsViewRefreshed(ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.Carto.esriViewDrawPhase,System.Object,ESRI.ArcGIS.Geometry.IEnvelope)">
+ <summary>
+ ViewRefreshedイベント ハンドラ
+ </summary>
+ <param name="view"></param>
+ <param name="phase"></param>
+ <param name="data"></param>
+ <param name="envelope"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

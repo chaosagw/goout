@@ -1,0 +1,83 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+稼働DB更新
+</name>
+</assembly>
+<members>
+<member name="T:稼働DB更新.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:稼働DB更新.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:稼働DB更新.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:稼働DB更新.AccessMdb._con">
+ <summary>
+ SQLコネクション
+ </summary>
+</member>
+<member name="F:稼働DB更新.AccessMdb._trn">
+ <summary>
+ トランザクション・オブジェクト
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.Connect(System.String,System.Int32)">
+ <summary>
+ DB接続
+ </summary>
+ <param name="dsn">データソース名</param>
+ <param name="tot">タイムアウト値</param>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.Disconnect">
+ <summary>
+ DB切断
+ </summary>
+</member>
+<member name="M:稼働DB更新.AccessMdb.ExecuteSql(System.String,System.Int32)">
+ <summary>
+ SQLの実行
+ </summary>
+ <param name="sql">SQL文</param>
+ <param name="tot">タイムアウト値</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.BeginTransaction">
+ <summary>
+ トランザクション開始
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.CommitTransaction">
+ <summary>
+ コミット
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.RollbackTransaction">
+ <summary>
+ ロールバック
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:稼働DB更新.AccessMdb.Finalize">
+ <summary>
+ ファイナライズ
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

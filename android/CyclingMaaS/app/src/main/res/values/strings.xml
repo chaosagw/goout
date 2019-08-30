@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CyclingMaaS in OKINAWA</string>
+    <string name="str_btn1">SEARCH</string>
+    <string name="str_btn2">BUS ROUTE</string>
+    <string name="str_txt1">Start:</string>
+    <string name="str_txt2">Goal:</string>
+    <string name="str_imgDesc">route_sample</string>
+</resources>

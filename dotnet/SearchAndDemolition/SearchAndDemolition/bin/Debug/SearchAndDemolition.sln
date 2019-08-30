@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "SearchAndDemolition", "SearchAndDemolition.exe", "{68BA3183-599E-40BD-B825-B02202CCE816}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\KKC\work\vs\Projects\SearchAndDemolition\SearchAndDemolition\bin\Debug\SearchAndDemolition.exe
+		RemoteMachine = R-KKC130-N
+		StartingDirectory = C:\KKC\work\vs\Projects\SearchAndDemolition\SearchAndDemolition\bin\Debug
+		Environment = 既定
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68BA3183-599E-40BD-B825-B02202CCE816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

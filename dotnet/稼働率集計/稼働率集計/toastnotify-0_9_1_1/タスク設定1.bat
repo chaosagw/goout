@@ -1,0 +1,1 @@
+at 13:15 /interactive /every:M,T,W,Th,F "C:\toastnotify-0_9_1_1\ToastNotify.exe" /C "•¨Œ‰Ò“­ŠÔ‚ğ“ü—Í‚µ‚Ü‚µ‚½‚©H" /T "‚¨’m‚ç‚¹" /o 15 /m Yahoo.tnm

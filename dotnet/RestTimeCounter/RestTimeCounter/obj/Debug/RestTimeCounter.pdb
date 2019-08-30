@@ -1,0 +1,697 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dnSpy.Contracts.Debugger.DotNet</name>
+    </assembly>
+    <members>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory">
+            <summary>
+            Creates breakpoints and tracepoints
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory.Create(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32)">
+            <summary>
+            Creates an enabled breakpoint. If there's already a breakpoint at the location, null is returned.
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the breakpoint within the method body</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory.CreateTracepoint(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32,System.String)">
+            <summary>
+            Creates an enabled tracepoint. If there's already a breakpoint at the location, null is returned.
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the tracepoint within the method body</param>
+            <param name="message">Message</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory.Create(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32,dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpointSettings)">
+            <summary>
+            Creates a breakpoint or a tracepoint. If there's already a breakpoint at the location, null is returned.
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the breakpoint within the method body</param>
+            <param name="settings">Breakpoint settings</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory.Create(dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo[])">
+            <summary>
+            Creates breakpoints or tracepoints. Duplicate breakpoints are ignored.
+            </summary>
+            <param name="breakpoints">Breakpoint infos</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointFactory.TryGetBreakpoint(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32)">
+            <summary>
+            Returns an existing breakpoint or null if none exists
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the breakpoint within the method body</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo">
+            <summary>
+            Contains all required data to create a breakpoint
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo.Module">
+            <summary>
+            Module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo.Token">
+            <summary>
+            Token of a method within the module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo.Offset">
+            <summary>
+            IL offset of the breakpoint within the method body
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo.Settings">
+            <summary>
+            Breakpoint settings
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Breakpoints.Code.DbgDotNetBreakpointInfo.#ctor(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32,dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpointSettings)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the breakpoint within the method body</param>
+            <param name="settings">Breakpoint settings</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange">
+            <summary>
+            Code range
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange.Start">
+            <summary>
+            Gets the start offset relative to the start of the method
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange.End">
+            <summary>
+            Gets the end method offset (exclusive) relative to the start of the method
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange.Length">
+            <summary>
+            Gets the length of the range
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="start">Start offset relative to the start of the method</param>
+            <param name="end">End method offset (exclusive) relative to the start of the method</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgCodeRange.Contains(System.UInt32)">
+            <summary>
+            Checks whether <paramref name="offset"/> is within this range
+            </summary>
+            <param name="offset">Offset</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation">
+            <summary>
+            .NET code location
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.Module">
+            <summary>
+            Gets the module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.Token">
+            <summary>
+            Gets the token of a method within the module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.Offset">
+            <summary>
+            Gets the IL offset within the method body
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.ILOffsetMapping">
+            <summary>
+            Gets the IL offset mapping
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.DbgModule">
+            <summary>
+            Gets the debugger module or null
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation.NativeAddress">
+            <summary>
+            Gets the native address
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocationFactory">
+            <summary>
+            Creates <see cref="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation"/> instances
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocationFactory.Create(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32)">
+            <summary>
+            Creates a new <see cref="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation"/> instance
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the location within the method body</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocationFactory.Create(dnSpy.Contracts.Metadata.ModuleId,System.UInt32,System.UInt32,dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping)">
+            <summary>
+            Creates a new <see cref="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetCodeLocation"/> instance
+            </summary>
+            <param name="module">Module</param>
+            <param name="token">Token of a method within the module</param>
+            <param name="offset">IL offset of the location within the method body</param>
+            <param name="ilOffsetMapping">IL offset mapping</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerGuidProvider">
+            <summary>
+            Converts <see cref="T:dnSpy.Contracts.Debugger.Evaluation.DbgLanguage"/>s to decompiler GUIDs. Use <see cref="T:dnSpy.Contracts.Debugger.DotNet.Code.ExportDbgDotNetDecompilerGuidProviderAttribute"/>
+            to export an instance
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerGuidProvider.GetDecompilerGuid(dnSpy.Contracts.Debugger.Evaluation.DbgLanguage)">
+            <summary>
+            Gets the decompiler GUID or null
+            </summary>
+            <param name="language">Language</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetDecompilerGuidProviderMetadata">
+            <summary>Metadata</summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetDecompilerGuidProviderMetadata.Order">
+            <summary>See <see cref="P:dnSpy.Contracts.Debugger.DotNet.Code.ExportDbgDotNetDecompilerGuidProviderAttribute.Order"/></summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.ExportDbgDotNetDecompilerGuidProviderAttribute">
+            <summary>
+            Exports a <see cref="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerGuidProvider"/> instance
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.ExportDbgDotNetDecompilerGuidProviderAttribute.#ctor(System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="order">Order</param>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.ExportDbgDotNetDecompilerGuidProviderAttribute.Order">
+            <summary>
+            Order
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerService">
+            <summary>
+            Returns the decompiler that should be used by code that needs to use a decompiler to format methods.
+            The decompiler gets updated when the <see cref="T:dnSpy.Contracts.Debugger.Evaluation.DbgLanguage"/> gets changed.
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerService.Decompiler">
+            <summary>
+            Gets the decompiler
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerService.DecompilerChanged">
+            <summary>
+            Raised after <see cref="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetDecompilerService.Decompiler"/> is changed
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetInstructionOffsetConstants">
+            <summary>
+            Constants
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetInstructionOffsetConstants.EPILOG">
+            <summary>
+            The offset is in an epilog
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetInstructionOffsetConstants.PROLOG">
+            <summary>
+            The offset is in the prolog
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction">
+            <summary>
+            IL instruction
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction.Offset">
+            <summary>
+            Gets the offset
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction.OpCode">
+            <summary>
+            Gets the opcode, <c>0x00XX</c> or <c>0xFEXX</c>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction.Operand">
+            <summary>
+            Gets the operand
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction.#ctor(System.UInt32,System.UInt16,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="offset">Offset of instruction</param>
+            <param name="opCode">IL opcode</param>
+            <param name="operand">Integer operand</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgILInstruction.ToString">
+            <summary>
+            ToString()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping">
+            <summary>
+            IL offset mapping result. This enum is similar to <c>CorDebugMappingResult</c>
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.Prolog">
+            <summary>
+            The native code is in the prolog
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.Epilog">
+            <summary>
+            The native code is in an epilog
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.Exact">
+            <summary>
+            Either the method maps exactly to MSIL code or the frame has been interpreted, so the value of the IP is accurate
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.Approximate">
+            <summary>
+            The method was successfully mapped, but the value of the IP may be approximate
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.NoInfo">
+            <summary>
+            No mapping information is available for the method
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgILOffsetMapping.UnmappedAddress">
+            <summary>
+            Although there is mapping information for the method, the current address cannot be mapped to Microsoft intermediate language (MSIL) code
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation">
+            <summary>
+            .NET code location
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.Module">
+            <summary>
+            Gets the module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.Token">
+            <summary>
+            Gets the token of a method within the module
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.Offset">
+            <summary>
+            Gets the IL offset within the method body
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.ILOffsetMapping">
+            <summary>
+            Gets the IL offset mapping
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.DbgModule">
+            <summary>
+            Gets the debugger module or null
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.IDbgDotNetCodeLocation.NativeAddress">
+            <summary>
+            Gets the native address
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress">
+            <summary>
+            Native address info
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.None">
+            <summary>
+            No address
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.Address">
+            <summary>
+            Gets the address or 0 if it's not available
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.Offset">
+            <summary>
+            Gets the offset relative to <see cref="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.Address"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.IP">
+            <summary>
+            Gets the instruction pointer
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Code.DbgDotNetNativeFunctionAddress.#ctor(System.UInt64,System.UInt64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="address">Address or 0 if it's not available</param>
+            <param name="offset">Offset relative to <paramref name="address"/></param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalAppDomain">
+            <summary>
+            Base class of a .NET app domain object implemented by the .NET debug engine
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalAppDomain.ReflectionAppDomain">
+            <summary>
+            Gets the reflection app domain
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalModule">
+            <summary>
+            Base class of a .NET module object implemented by the .NET debug engine
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalModule.ReflectionModule">
+            <summary>
+            Gets the reflection module or null if this isn't a managed module
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalRuntime">
+            <summary>
+            Base class of a .NET runtime object implemented by the .NET debug engine. It must implement <see cref="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.IDbgDotNetRuntime"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.DbgDotNetInternalRuntime.ReflectionRuntime">
+            <summary>
+            Gets the reflection runtime
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo">
+            <summary>
+            Alias
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.Kind">
+            <summary>
+            Alias kind
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.Type">
+            <summary>
+            Alias type
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.Id">
+            <summary>
+            Alias id
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.CustomTypeInfo">
+            <summary>
+            Custom type info understood by the EE or null
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.CustomTypeInfoId">
+            <summary>
+            Custom type info ID
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfo.#ctor(dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfoKind,dnSpy.Debugger.DotNet.Metadata.DmdType,System.UInt32,System.Guid,System.Collections.ObjectModel.ReadOnlyCollection{System.Byte})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="kind">Alias kind</param>
+            <param name="type">Alias type</param>
+            <param name="id">Alias id</param>
+            <param name="customTypeInfoId">Custom type info ID</param>
+            <param name="customTypeInfo">Custom type info understood by the EE or null</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfoKind">
+            <summary>
+            Alias kind
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfoKind.Exception">
+            <summary>
+            An exception, eg. "$exception"
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfoKind.StowedException">
+            <summary>
+            A stowed exception, eg. "$stowedexception"
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetAliasInfoKind.ReturnValue">
+            <summary>
+            A return value, eg. "$ReturnValue1"
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetCustomTypeInfo">
+            <summary>
+            Extra custom type info provided by the expression compiler and used by language formatters
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetCustomTypeInfo.CustomTypeInfoId">
+            <summary>
+            Gets the custom type info ID
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetCustomTypeInfo.CustomTypeInfo">
+            <summary>
+            Gets the custom type info
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetCustomTypeInfo.#ctor(System.Guid,System.Collections.ObjectModel.ReadOnlyCollection{System.Byte})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="customTypeInfoId">Custom type info ID</param>
+            <param name="customTypeInfo">Custom type info</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher">
+            <summary>
+            Invokes code on another thread.
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher.VerifyAccess">
+            <summary>
+            Throws if the current thread isn't the dispatcher thread
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher.CheckAccess">
+            <summary>
+            Checks whether the current thread is the dispatcher thread
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher.BeginInvoke(System.Action)">
+            <summary>
+            Executes code asynchronously on the dispatcher thread. This method returns immediately even if
+            it happens to be called on the dispatcher thread.
+            </summary>
+            <param name="callback">Code to execute</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher.Invoke``1(System.Func{``0})">
+            <summary>
+            Executes code on the dispatcher thread
+            </summary>
+            <typeparam name="T">Return type</typeparam>
+            <param name="callback">Code to execute</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetDispatcher.Invoke(System.Action)">
+            <summary>
+            Executes code on the dispatcher thread
+            </summary>
+            <param name="callback">Code to execute</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo">
+            <summary>
+            Exception info
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo.Flags">
+            <summary>
+            Gets the flags
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo.IsStowedException">
+            <summary>
+            true if it's a stowed exception
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo.Id">
+            <summary>
+            Gets the exception id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo.Value">
+            <summary>
+            Gets the exception instance. There's no guarantee that it derives from <see cref="T:System.Exception"/>.
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfo.#ctor(dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue,System.UInt32,dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfoFlags)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value">Exception value</param>
+            <param name="id">Exception id</param>
+            <param name="flags">Flags</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfoFlags">
+            <summary>
+            Exception info flags
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfoFlags.None">
+            <summary>
+            No bit is set
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetExceptionInfoFlags.StowedException">
+            <summary>
+            If set, it's a stowed exception, else it's an exception
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetLanguageGuids">
+            <summary>
+            .NET language guids
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetLanguageGuids.CSharp">
+            <summary>
+            C# language
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetLanguageGuids.VisualBasic">
+            <summary>
+            Visual Basic language
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetObjectId">
+            <summary>
+            References a value in the debugged process
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetObjectId.Id">
+            <summary>
+            Gets the unique id in the runtime
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetObjectId.Dispose">
+            <summary>
+            Called when its owner (<see cref="T:dnSpy.Contracts.Debugger.Engine.Evaluation.DbgEngineObjectId"/>) gets closed
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo">
+            <summary>
+            Contains a method and its return value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo.Id">
+            <summary>
+            Gets the return value id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo.Method">
+            <summary>
+            Gets the method
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo.Value">
+            <summary>
+            Gets the value returned by <see cref="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo.Method"/>
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetReturnValueInfo.#ctor(System.UInt32,dnSpy.Debugger.DotNet.Metadata.DmdMethodBase,dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="id">Return value id</param>
+            <param name="method">Method</param>
+            <param name="value">Value returned by <paramref name="method"/></param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue">
+            <summary>
+            Result of evaluating an expression. All values are automatically closed when the runtime continues
+            but they implement <see cref="T:System.IDisposable"/> and should be disposed of earlier if possible.
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.Type">
+            <summary>
+            Gets the type of the value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.IsNull">
+            <summary>
+            true if this is a null value
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.LoadIndirect">
+            <summary>
+            Gets the referenced value if it's a by-ref or a pointer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.StoreIndirect(dnSpy.Contracts.Debugger.Evaluation.DbgEvaluationInfo,System.Object)">
+            <summary>
+            Writes to the referenced value (by-ref or pointer). The return value is null or an error message.
+            </summary>
+            <param name="evalInfo">Evaluation info</param>
+            <param name="value">Value to store: A <see cref="T:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue"/> or a primitive number or a string or arrays of primitive numbers / strings</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.GetArrayCount(System.UInt32@)">
+            <summary>
+            Gets the number of elements of the array
+            </summary>
+            <param name="elementCount">Total number of elements in the array</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.GetArrayInfo(System.UInt32@,dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetArrayDimensionInfo[]@)">
+            <summary>
+            Gets array information if it's an array or returns false
+            </summary>
+            <param name="elementCount">Total number of elements in the array</param>
+            <param name="dimensionInfos">Dimension base indexes and lengths</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.DotNet.Evaluation.DbgDotNetValue.GetArrayElementAddressAt(System.UInt32)">
+            <summary>
+            Gets the address of the element at <paramref name="index"/> in the array or null if it's not supported.
+            This method can be called even if it's a multi-dimensional array.
+            </summary>
+            <param name="index">Zero-based index of the element</param>
+            <retur

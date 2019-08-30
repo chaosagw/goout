@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SearchAndDemolition">
+</Property><Property Name="ソリューション ファイル" Value="E:\#work\#Visual Studio\Projects\SearchAndDemolition\SearchAndDemolition.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="E:\#work\#Visual Studio\Projects\SearchAndDemolition\SearchAndDemolition.suo">
+</Property><Property Name="Date" Value="2011年1月5日">
+</Property><Property Name="Time" Value="17:27">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SearchAndDemolition.sln" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition.sln としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="SearchAndDemolition.suo" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition.suo としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\SearchAndDemolition.vbproj" Description="プロジェクト ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\SearchAndDemolition.vbproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\SearchAndDemolition.vbproj.user" Description="プロジェクト ユーザー ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\SearchAndDemolition.vbproj.user としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\Form1.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\Form1.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\Form1.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\Form1.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\AssemblyInfo.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\AssemblyInfo.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Application.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Application.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Resources.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Resources.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Settings.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Settings.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Application.myapp" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Application.myapp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Settings.settings" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Settings.settings としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\death.by.ape.ico" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\death.by.ape.ico としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\Form1.resx" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\Form1.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\My Project\Resources.resx" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SearchAndDemolition\Backup\SearchAndDemolition\My Project\Resources.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\SearchAndDemolition.vbproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="SearchAndDemolition" Source="SearchAndDemolition\SearchAndDemolition.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SearchAndDemolition.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="SearchAndDemolition.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SearchAndDemolition" Source="SearchAndDemolition\SearchAndDemolition.vbproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event></UpgradeLog>

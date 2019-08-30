@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:background="@drawable/background"
+                                             tools:context=".RouteActivity">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent">
+        <Button
+                android:text="ROUTE1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1" android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"/>
+        <Button
+                android:text="ROUTE2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:layout_marginTop="16dp"/>
+        <Button
+                android:text="ROUTE3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3"
+                android:layout_marginTop="16dp"/>
+    </LinearLayout>
+    <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="670dp"
+            tools:context=".MainActivity"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="76dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="980dp" app:srcCompat="@drawable/route2"
+                    android:id="@+id/imageView"
+                    android:contentDescription="@string/str_imgDesc" android:scaleType="fitStart"/>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,10 @@
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\bin\x86\Debug\SwitchLyrVisibl.dll
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\bin\x86\Debug\SwitchLyrVisibl.pdb
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\bin\x86\Debug\SwitchLyrVisibl.xml
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\obj\x86\Debug\SwitchLyrVisibl.Resources.resources
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\obj\x86\Debug\SwitchLyrVisibl.vbproj.GenerateResource.Cache
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\obj\x86\Debug\SwitchLyrVisibl.dll
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\obj\x86\Debug\SwitchLyrVisibl.xml
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\obj\x86\Debug\SwitchLyrVisibl.pdb
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\bin\x86\Debug\SwitchLyrVisibl.dll.config
+C:\KKC\work\vs\Projects\SwitchLyrVisibl\SwitchLyrVisibl\bin\x86\Debug\SwitchLyrVisibl.esriAddIn

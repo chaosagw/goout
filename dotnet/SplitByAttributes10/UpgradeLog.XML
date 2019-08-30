@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SplitByAttributes10">
+</Property><Property Name="ソリューション ファイル" Value="E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10.suo">
+</Property><Property Name="Date" Value="2011年2月3日">
+</Property><Property Name="Time" Value="11:00">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SplitByAttributes10.sln" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10.sln としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="SplitByAttributes10.suo" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10.suo としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByAttributes10.vbproj" Description="プロジェクト ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\SplitByAttributes10.vbproj としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByAttributes10.vbproj.user" Description="プロジェクト ユーザー ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\SplitByAttributes10.vbproj.user としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\AssemblyInfo.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\AssemblyInfo.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Application.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Application.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Resources.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Resources.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Settings.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Settings.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\Config.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\Config.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\frmMain.Designer.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\frmMain.Designer.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\frmMain.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\frmMain.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByATR.vb" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\SplitByATR.vb としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Application.myapp" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Application.myapp としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Settings.settings" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Settings.settings としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\frmMain.resx" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\frmMain.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\My Project\Resources.resx" Description="ファイルは正常に E:\#work\#Visual Studio\Projects\SplitByAttributes10\Backup\SplitByAttributes10\My Project\Resources.resx としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByAttributes10.vbproj" Description="プロジェクトは正常に変換されました。">
+</Event><Event ErrorLevel="3" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByAttributes10.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SplitByAttributes10.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="SplitByAttributes10.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SplitByAttributes10" Source="SplitByAttributes10\SplitByAttributes10.vbproj" Description="スキャンが完了しました: プロジェクト ファイルにアップグレードは必要ありません。">
+</Event></UpgradeLog>

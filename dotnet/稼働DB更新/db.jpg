@@ -1,0 +1,696 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dnSpy.Contracts.Debugger</name>
+    </assembly>
+    <members>
+        <member name="T:dnSpy.Contracts.Debugger.AttachToProgramOptions">
+            <summary>
+            Attach to program base class. Created eg. by <see cref="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.GetOptions"/>
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.AttachToProgramOptions.CopyTo(dnSpy.Contracts.Debugger.AttachToProgramOptions)">
+            <summary>
+            Copies this instance to <paramref name="other"/> and returns it
+            </summary>
+            <param name="other">Destination</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachableProcess">
+            <summary>
+            A process that can be attached to
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.ProcessId">
+            <summary>
+            Process id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.RuntimeId">
+            <summary>
+            Runtime id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.RuntimeGuid">
+            <summary>
+            Gets the runtime GUID, see <see cref="T:dnSpy.Contracts.Debugger.PredefinedDbgRuntimeGuids"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.RuntimeKindGuid">
+            <summary>
+            Gets the runtime kind GUID, see <see cref="T:dnSpy.Contracts.Debugger.PredefinedDbgRuntimeKindGuids"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.RuntimeName">
+            <summary>
+            Runtime name, eg. "CLR v4.0.30319"
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.Name">
+            <summary>
+            Short process name (filename)
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.Title">
+            <summary>
+            Process title
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.Filename">
+            <summary>
+            Full filename
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachableProcess.Architecture">
+            <summary>
+            Processor architecture (eg. <see cref="F:dnSpy.Contracts.Debugger.Attach.PredefinedArchitectureNames.X86"/>)
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachableProcess.GetOptions">
+            <summary>
+            Gets all options required to attach to the process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachableProcess.Attach">
+            <summary>
+            Attaches to the process
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachableProcessesService">
+            <summary>
+            Returns all processes that the debug engines support
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachableProcessesService.GetAttachableProcessesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets all programs that can be attached to
+            </summary>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachableProcessesService.GetAttachableProcessesAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets all programs that can be attached to
+            </summary>
+            <param name="processName">Process name. If it's empty or null, it matches any string. This can include wildcards (* and ?).</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachableProcessesService.GetAttachableProcessesAsync(System.String[],System.String[],System.Threading.CancellationToken)">
+            <summary>
+            Gets all programs that can be attached to
+            </summary>
+            <param name="processNames">Process names or null/empty to match any process name. The process name can
+            include wildcards (* and ?)</param>
+            <param name="providerNames"><see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory"/> names, see <see cref="T:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames"/></param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions">
+            <summary>
+            Options shown in the 'attach to process' dialog box and created by <see cref="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider.Create(dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext)"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.ProcessId">
+            <summary>
+            Process id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.RuntimeId">
+            <summary>
+            Runtime id
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.RuntimeGuid">
+            <summary>
+            Gets the runtime GUID, see <see cref="T:dnSpy.Contracts.Debugger.PredefinedDbgRuntimeGuids"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.RuntimeKindGuid">
+            <summary>
+            Gets the runtime kind GUID, see <see cref="T:dnSpy.Contracts.Debugger.PredefinedDbgRuntimeKindGuids"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.RuntimeName">
+            <summary>
+            Runtime name, eg. "CLR v4.0.30319"
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.Name">
+            <summary>
+            Short process name (filename) or null to use the default value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.Title">
+            <summary>
+            Process title or null to use the default value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.Filename">
+            <summary>
+            Full filename or null to use the default value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.CommandLine">
+            <summary>
+            Command line or null to use the default value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.Architecture">
+            <summary>
+            Processor architecture (eg. <see cref="F:dnSpy.Contracts.Debugger.Attach.PredefinedArchitectureNames.X86"/>) or null to use the default value
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.GetOptions">
+            <summary>
+            Gets all options required to attach to the process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider">
+            <summary>
+            Creates <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions"/>
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider.Create(dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext)">
+            <summary>
+            Creates new <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions"/> instances. This method is called on a background thread.
+            </summary>
+            <param name="context">Context</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext">
+            <summary>
+            Context passed to <see cref="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider.Create(dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext)"/>
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext.CancellationToken">
+            <summary>
+            Cancellation token
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderContext.#ctor(System.Threading.CancellationToken)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory">
+            <summary>
+            Creates <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider"/> instances. Use <see cref="T:dnSpy.Contracts.Debugger.Attach.ExportAttachProgramOptionsProviderFactoryAttribute"/>
+            to export an instance.
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory.Create(System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProvider"/> or returns null
+            </summary>
+            <param name="allFactories">true if all factories are called, false if only some of them get called</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.IAttachProgramOptionsProviderFactoryMetadata">
+            <summary>Metadata</summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.IAttachProgramOptionsProviderFactoryMetadata.Name">
+            <summary>See <see cref="P:dnSpy.Contracts.Debugger.Attach.ExportAttachProgramOptionsProviderFactoryAttribute.Name"/></summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.ExportAttachProgramOptionsProviderFactoryAttribute">
+            <summary>
+            Exports an <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory"/> instance
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.ExportAttachProgramOptionsProviderFactoryAttribute.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Name, see <see cref="T:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames"/></param>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.ExportAttachProgramOptionsProviderFactoryAttribute.Name">
+            <summary>
+            Name, see <see cref="T:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames"/>
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialog">
+            <summary>
+            Shows the Attach to Process dialog box
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialog.Show(dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions)">
+            <summary>
+            Shows the dialog box and returns the selected processes or an empty list
+            </summary>
+            <param name="options">Options or null to use the default options</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialog.Attach(dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions)">
+            <summary>
+            Shows the dialog box and attaches to the selected processes
+            </summary>
+            <param name="options">Options or null to use the default options</param>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions">
+            <summary>
+            Attach to Process dialog options
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions.Title">
+            <summary>
+            Gets the title or null to use the default title
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions.ProcessType">
+            <summary>
+            Type of processes that can be attached to. Shown in the title bar, eg. "Unity" or null to not show anything
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions.Message">
+            <summary>
+            Text shown at the bottom of the dialog box between the buttons or null to use the default value
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions.ProviderNames">
+            <summary>
+            <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory"/> names, see <see cref="T:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames"/>
+            or null to check every provider
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.ShowAttachToProcessDialogOptions.InfoLink">
+            <summary>
+            Link button info shown next to the OK button
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.Dialogs.AttachToProcessLinkInfo">
+            <summary>
+            Link info
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.AttachToProcessLinkInfo.ToolTipMessage">
+            <summary>
+            Tooltip message
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Attach.Dialogs.AttachToProcessLinkInfo.Url">
+            <summary>
+            URL to go to when button is clicked
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.PredefinedArchitectureNames">
+            <summary>
+            Predefined architecture names, see <see cref="P:dnSpy.Contracts.Debugger.Attach.AttachProgramOptions.Architecture"/>
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedArchitectureNames.X86">
+            <summary>
+            x86 (32-bit)
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedArchitectureNames.X64">
+            <summary>
+            x64 (64-bit)
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames">
+            <summary>
+            Predefined <see cref="T:dnSpy.Contracts.Debugger.Attach.AttachProgramOptionsProviderFactory"/> names
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames.DotNetFramework">
+            <summary>
+            .NET Framework
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames.DotNetCore">
+            <summary>
+            .NET Core
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames.UnityEditor">
+            <summary>
+            Unity Editor
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Attach.PredefinedAttachProgramOptionsProviderNames.UnityPlayer">
+            <summary>
+            Unity Player
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint">
+            <summary>
+            A bound breakpoint. These only exist while debugging a program. A bound breakpoint is only created
+            if the breakpoint is enabled.
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.PropertyChanged">
+            <summary>
+            Raised when a property is changed
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Breakpoint">
+            <summary>
+            Gets the breakpoint
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Process">
+            <summary>
+            Gets the process
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Runtime">
+            <summary>
+            Gets the runtime
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Module">
+            <summary>
+            Gets the module or null if none
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Address">
+            <summary>
+            Gets the address of the breakpoint. This property is valid if <see cref="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.HasAddress"/> is true
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.HasAddress">
+            <summary>
+            true if <see cref="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Address"/> is a valid address
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpoint.Message">
+            <summary>
+            Gets the warning/error message
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointSeverity">
+            <summary>
+            Bound breakpoint message severity
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointSeverity.None">
+            <summary>
+            No error/warning message
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointSeverity.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointSeverity.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage">
+            <summary>
+            Bound breakpoint message
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.None">
+            <summary>
+            No error/warning message
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.Severity">
+            <summary>
+            Gets the severity
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.Message">
+            <summary>
+            Gets the message
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.#ctor(dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointSeverity,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="severity">Severity</param>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.Equals(dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage)">
+            <summary>
+            Compares this instance to <paramref name="other"/>
+            </summary>
+            <param name="other">Other instance</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.Equals(System.Object)">
+            <summary>
+            Compares this instance to <paramref name="obj"/>
+            </summary>
+            <param name="obj">Object</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.GetHashCode">
+            <summary>
+            Gets the hash code
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBoundCodeBreakpointMessage.ToString">
+            <summary>
+            ToString()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter">
+            <summary>
+            Formats some columns in the code breakpoints window
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.NameProperty">
+            <summary>
+            Name of the Name property
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.ModuleProperty">
+            <summary>
+            Name of the Module property
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.PropertyChanged">
+            <summary>
+            Raised when a property is changed
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.RaiseNameChanged">
+            <summary>
+            Called when the name needs to be reformatted
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.RaiseModuleChanged">
+            <summary>
+            Called when the module needs to be reformatted
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.WriteName(dnSpy.Contracts.Text.ITextColorWriter,dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions)">
+            <summary>
+            Writes the name shown in the Name column
+            </summary>
+            <param name="output">Output</param>
+            <param name="options">Options</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.WriteModule(dnSpy.Contracts.Text.ITextColorWriter)">
+            <summary>
+            Writes the module shown in the Module column
+            </summary>
+            <param name="output">Output</param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatter.Dispose">
+            <summary>
+            Called when this instance isn't needed anymore
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions">
+            <summary>
+            Formatter options
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.None">
+            <summary>
+            No bit is set
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.Tokens">
+            <summary>
+            Show metadata tokens
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.ModuleNames">
+            <summary>
+            Show module names
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.ParameterTypes">
+            <summary>
+            Show parameter types
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.ParameterNames">
+            <summary>
+            Show parameter names
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.DeclaringTypes">
+            <summary>
+            Show declaring types
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.ReturnTypes">
+            <summary>
+            Show return types
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.Namespaces">
+            <summary>
+            Show namespaces
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.IntrinsicTypeKeywords">
+            <summary>
+            Show intrinsic type keywords (eg. int instead of Int32)
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.DigitSeparators">
+            <summary>
+            Use digit separators
+            </summary>
+        </member>
+        <member name="F:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterOptions.Decimal">
+            <summary>
+            Use decimal instead of hexadecimal
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterProvider">
+            <summary>
+            Creates <see cref="T:dnSpy.Contracts.Debugger.Code.DbgCodeLocation"/> formatters. Use <see cref="T:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute"/>
+            to export an instance.
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterProvider.Create(dnSpy.Contracts.Debugger.Code.DbgCodeLocation)">
+            <summary>
+            Returns a formatter or null
+            </summary>
+            <param name="location">Breakpoint location</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.IDbgBreakpointLocationFormatterProviderMetadata">
+            <summary>Metadata</summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.IDbgBreakpointLocationFormatterProviderMetadata.Types">
+            <summary>See <see cref="P:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute.Types"/></summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute">
+            <summary>
+            Exports a <see cref="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgBreakpointLocationFormatterProvider"/> instance
+            </summary>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">Type (compared against <see cref="P:dnSpy.Contracts.Debugger.Code.DbgCodeLocation.Type"/>), see <see cref="T:dnSpy.Contracts.Debugger.Code.PredefinedDbgCodeLocationTypes"/></param>
+        </member>
+        <member name="M:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute.#ctor(System.String[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="types">Types (compared against <see cref="P:dnSpy.Contracts.Debugger.Code.DbgCodeLocation.Type"/>), see <see cref="T:dnSpy.Contracts.Debugger.Code.PredefinedDbgCodeLocationTypes"/></param>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.ExportDbgBreakpointLocationFormatterProviderAttribute.Types">
+            <summary>
+            Types (compared against <see cref="P:dnSpy.Contracts.Debugger.Code.DbgCodeLocation.Type"/>), see <see cref="T:dnSpy.Contracts.Debugger.Code.PredefinedDbgCodeLocationTypes"/>
+            </summary>
+        </member>
+        <member name="T:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint">
+            <summary>
+            Code breakpoint
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Id">
+            <summary>
+            Gets the unique code breakpoint id
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.HitCheck">
+            <summary>
+            Can be used by code to add custom hit test conditions
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Hit">
+            <summary>
+            Raised when the breakpoint is hit and the process will be paused
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Options">
+            <summary>
+            Gets the breakpoint options
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.IsTemporary">
+            <summary>
+            true if it's a temporary breakpoint that gets removed when all debugged processes have exited
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.IsHidden">
+            <summary>
+            true if it's a hidden breakpoint. It's not shown in the UI (eg. breakpoints window, call stack window, glyph margin, text view)
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.IsOneShot">
+            <summary>
+            true if it's a one-shot breakpoint. When the breakpoint is hit, the process is paused and the breakpoint is removed
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Settings">
+            <summary>
+            Gets/sets the current settings
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.IsEnabled">
+            <summary>
+            true if the breakpoint is enabled
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Condition">
+            <summary>
+            Condition
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.HitCount">
+            <summary>
+            Hit count
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Filter">
+            <summary>
+            Filter
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Trace">
+            <summary>
+            Trace message
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Labels">
+            <summary>
+            Labels
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.Location">
+            <summary>
+            Gets the breakpoint location
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.BoundBreakpoints">
+            <summary>
+            Gets all bound breakpoints
+            </summary>
+        </member>
+        <member name="E:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.BoundBreakpointsChanged">
+            <summary>
+            Raised when <see cref="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.BoundBreakpoints"/> is changed
+            </summary>
+        </member>
+        <member name="P:dnSpy.Contracts.Debugger.Breakpoints.Code.DbgCodeBreakpoint.BoundBr

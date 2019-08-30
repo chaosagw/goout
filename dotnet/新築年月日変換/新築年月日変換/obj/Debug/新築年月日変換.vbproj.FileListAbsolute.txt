@@ -1,0 +1,22 @@
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\bin\Debug\新築年月日変換.exe.config
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\bin\Debug\新築年月日変換.exe
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\bin\Debug\新築年月日変換.pdb
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\bin\Debug\新築年月日変換.xml
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.vbprojResolveAssemblyReference.cache
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.Form1.resources
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.Resources.resources
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.vbproj.GenerateResource.Cache
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.exe
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.xml
+C:\Users\r-kkc\AppData\Local\Temporary Projects\新築年月日変換\obj\Debug\新築年月日変換.pdb
+D:\vs\Projects\新築年月日変換\新築年月日変換\bin\Debug\新築年月日変換.exe.config
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.exe
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.xml
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.pdb
+D:\vs\Projects\新築年月日変換\新築年月日変換\bin\Debug\新築年月日変換.exe
+D:\vs\Projects\新築年月日変換\新築年月日変換\bin\Debug\新築年月日変換.pdb
+D:\vs\Projects\新築年月日変換\新築年月日変換\bin\Debug\新築年月日変換.xml
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.vbprojResolveAssemblyReference.cache
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.Form1.resources
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.Resources.resources
+D:\vs\Projects\新築年月日変換\新築年月日変換\obj\Debug\新築年月日変換.vbproj.GenerateResource.Cache

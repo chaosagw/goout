@@ -1,0 +1,12 @@
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\bin\Debug\SplitByAttributes10.dll
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\bin\Debug\SplitByAttributes10.pdb
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\bin\Debug\SplitByAttributes10.xml
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\ResolveAssemblyReference.cache
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.frmMain.resources
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.Resources.resources
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.vbproj.GenerateResource.Cache
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.dll
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.xml
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\obj\Debug\SplitByAttributes10.pdb
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\bin\Debug\VbPowerPack.dll
+E:\#work\#Visual Studio\Projects\SplitByAttributes10\SplitByAttributes10\bin\Debug\SplitByAttributes10.esriAddIn

@@ -1,0 +1,12 @@
+C:\Users\r-kkc\AppData\Local\Temporary Projects\床面積置換3\bin\Debug\床面積置換3.exe.config
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\bin\Debug\床面積置換3.exe.config
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.vbprojResolveAssemblyReference.cache
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.Form2.resources
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.Resources.resources
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.vbproj.GenerateResource.Cache
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\bin\Debug\床面積置換3.exe
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\bin\Debug\床面積置換3.pdb
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\bin\Debug\床面積置換3.xml
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.exe
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.xml
+C:\Users\r-kkc\Documents\Visual Studio 2015\Projects\床面積置換3\床面積置換3\obj\Debug\床面積置換3.pdb

@@ -1,0 +1,12 @@
+C:\Users\r-kkc\AppData\Local\Temporary Projects\RestTimeCounter\bin\Debug\RestTimeCounter.exe.config
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\bin\Debug\RestTimeCounter.exe.config
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\bin\Debug\RestTimeCounter.exe
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\bin\Debug\RestTimeCounter.pdb
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\bin\Debug\RestTimeCounter.xml
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.vbprojResolveAssemblyReference.cache
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.Form1.resources
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.Resources.resources
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.vbproj.GenerateResource.Cache
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.exe
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.xml
+D:\vs\Projects\RestTimeCounter\RestTimeCounter\obj\Debug\RestTimeCounter.pdb

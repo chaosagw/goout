@@ -1,0 +1,20 @@
+
+        <member name="F:dnSpy.Debugger.DotNet.Interpreter.ILValueKind.NativeInt">
+            <summary>
+            Unmanaged pointer or native int
+            </summary>
+        </member>
+        <member name="F:dnSpy.Debugger.DotNet.Interpreter.ILValueKind.ByRef">
+            <summary>
+            Managed pointer
+            </summary>
+        </member>
+        <member name="F:dnSpy.Debugger.DotNet.Interpreter.ILValueKind.Type">
+            <summary>
+            Any other reference type or value type
+            </summary>
+        </member>
+        <member name="T:dnSpy.Debugger.DotNet.Interpreter.ILValue">
+            <summary>
+            A value that can be stored on the IL stack
+     

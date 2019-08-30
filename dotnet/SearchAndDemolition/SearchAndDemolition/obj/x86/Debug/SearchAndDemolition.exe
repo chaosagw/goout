@@ -1,0 +1,2007 @@
+ of <see cref="P:ICSharpCode.NRefactory.TypeSystem.IType.DirectBaseTypes"/>.
+            Note that this method does not return all supertypes - doing so is impossible due to contravariance
+            (and undesirable for covariance as the list could become very large).
+            
+            The output is ordered so that base types occur before derived types.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetNonInterfaceBaseTypes(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets all non-interface base types.
+            </summary>
+            <remarks>
+            When <paramref name="type"/> is an interface, this method will also return base interfaces (return same output as GetAllBaseTypes()).
+            
+            The output is ordered so that base types occur before derived types.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAllBaseTypeDefinitions(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets all base type definitions.
+            The output is ordered so that base types occur before derived types.
+            </summary>
+            <remarks>
+            This is equivalent to type.GetAllBaseTypes().Select(t => t.GetDefinition()).Where(d => d != null).Distinct().
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsDerivedFrom(ICSharpCode.NRefactory.TypeSystem.ITypeDefinition,ICSharpCode.NRefactory.TypeSystem.ITypeDefinition)">
+            <summary>
+            Gets whether this type definition is derived from the base type definition.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsDerivedFrom(ICSharpCode.NRefactory.TypeSystem.ITypeDefinition,ICSharpCode.NRefactory.TypeSystem.KnownTypeCode)">
+            <summary>
+            Gets whether this type definition is derived from a given known type.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsOpen(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets whether the type is an open type (contains type parameters).
+            </summary>
+            <example>
+            <code>
+            class X&lt;T&gt; {
+              List&lt;T&gt; open;
+              X&lt;X&lt;T[]&gt;&gt; open;
+              X&lt;string&gt; closed;
+              int closed;
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetTypeParameterOwner(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets the entity that owns the type parameters occurring in the specified type.
+            If both class and method type parameters are present, the method is returned.
+            Returns null if the specified type is closed.
+            </summary>
+            <seealso cref="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsOpen(ICSharpCode.NRefactory.TypeSystem.IType)"/>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsUnbound(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets whether the type is unbound (is a generic type, but no type arguments were provided).
+            </summary>
+            <remarks>
+            In "<c>typeof(List&lt;Dictionary&lt;,&gt;&gt;)</c>", only the Dictionary is unbound, the List is considered
+            bound despite containing an unbound type.
+            This method returns false for partially parameterized types (<c>Dictionary&lt;string, &gt;</c>).
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.IsKnownType(ICSharpCode.NRefactory.TypeSystem.IType,ICSharpCode.NRefactory.TypeSystem.KnownTypeCode)">
+            <summary>
+            Gets whether the type is the specified known type.
+            For generic known types, this returns true any parameterization of the type (and also for the definition itself).
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.ISymbol)">
+            <summary>
+            Imports a symbol from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Imports a type from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.ITypeDefinition)">
+            <summary>
+            Imports a type from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IEntity)">
+            <summary>
+            Imports an entity from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IMember)">
+            <summary>
+            Imports a member from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IMethod)">
+            <summary>
+            Imports a member from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IField)">
+            <summary>
+            Imports a member from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IEvent)">
+            <summary>
+            Imports a member from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.IProperty)">
+            <summary>
+            Imports a member from another compilation.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Import(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.INamespace)">
+            <summary>
+            Imports a namespace from another compilation.
+            </summary>
+            <remarks>
+            This method may return null if the namespace does not exist in the target compilation.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetDelegateInvokeMethod(ICSharpCode.NRefactory.TypeSystem.IType)">
+            <summary>
+            Gets the invoke method for a delegate type.
+            </summary>
+            <remarks>
+            Returns null if the type is not a delegate type; or if the invoke method could not be found.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAllTypeDefinitions(ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile)">
+            <summary>
+            Gets all unresolved type definitions from the file.
+            For partial classes, each part is returned.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAllTypeDefinitions(ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly)">
+            <summary>
+            Gets all unresolved type definitions from the assembly.
+            For partial classes, each part is returned.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAllTypeDefinitions(ICSharpCode.NRefactory.TypeSystem.ICompilation)">
+            <summary>
+            Gets all type definitions in the compilation.
+            This may include types from referenced assemblies that are not accessible in the main assembly.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetTopLevelTypeDefinitons(ICSharpCode.NRefactory.TypeSystem.ICompilation)">
+            <summary>
+            Gets all top level type definitions in the compilation.
+            This may include types from referenced assemblies that are not accessible in the main assembly.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetInnermostTypeDefinition(ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile,System.Int32,System.Int32)">
+            <summary>
+            Gets the type (potentially a nested type) defined at the specified location.
+            Returns null if no type is defined at that location.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetMember(ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile,System.Int32,System.Int32)">
+            <summary>
+            Gets the member defined at the specified location.
+            Returns null if no member is defined at that location.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetSubTypeDefinitions(ICSharpCode.NRefactory.TypeSystem.ITypeDefinition)">
+            <summary>
+            Gets all sub type definitions defined in a context.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.FindType(ICSharpCode.NRefactory.TypeSystem.ICompilation,ICSharpCode.NRefactory.TypeSystem.FullTypeName)">
+            <summary>
+            Retrieves the specified type in this compilation.
+            Returns an <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.UnknownType"/> if the type cannot be found in this compilation.
+            </summary>
+            <remarks>
+            There can be multiple types with the same full name in a compilation, as a
+            full type name is only unique per assembly.
+            If there are multiple possible matches, this method will return just one of them.
+            When possible, use <see cref="M:ICSharpCode.NRefactory.TypeSystem.IAssembly.GetTypeDefinition(ICSharpCode.NRefactory.TypeSystem.TopLevelTypeName)"/> instead to
+            retrieve a type from a specific assembly.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetTypeDefinition(ICSharpCode.NRefactory.TypeSystem.IAssembly,ICSharpCode.NRefactory.TypeSystem.FullTypeName)">
+            <summary>
+            Gets the type definition for the specified unresolved type.
+            Returns null if the unresolved type does not belong to this assembly.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeReference,ICSharpCode.NRefactory.TypeSystem.ICompilation)">
+            <summary>
+            Resolves a type reference in the compilation's main type resolve context.
+            Some type references require a more specific type resolve context and will not resolve using this method.
+            </summary>
+            <returns>
+            Returns the resolved type.
+            In case of an error, returns <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.UnknownType"/>.
+            Never returns null.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAttribute(ICSharpCode.NRefactory.TypeSystem.IEntity,ICSharpCode.NRefactory.TypeSystem.IType,System.Boolean)">
+            <summary>
+            Gets the attribute of the specified attribute type (or derived attribute types).
+            </summary>
+            <param name="entity">The entity on which the attributes are declared.</param>
+            <param name="attributeType">The attribute type to look for.</param>
+            <param name="inherit">
+            Specifies whether attributes inherited from base classes and base members (if the given <paramref name="entity"/> in an <c>override</c>)
+            should be returned. The default is <c>true</c>.
+            </param>
+            <returns>
+            Returns the attribute that was found; or <c>null</c> if none was found.
+            If inherit is true, an from the entity itself will be returned if possible;
+            and the base entity will only be searched if none exists.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAttributes(ICSharpCode.NRefactory.TypeSystem.IEntity,ICSharpCode.NRefactory.TypeSystem.IType,System.Boolean)">
+            <summary>
+            Gets the attributes of the specified attribute type (or derived attribute types).
+            </summary>
+            <param name="entity">The entity on which the attributes are declared.</param>
+            <param name="attributeType">The attribute type to look for.</param>
+            <param name="inherit">
+            Specifies whether attributes inherited from base classes and base members (if the given <paramref name="entity"/> in an <c>override</c>)
+            should be returned. The default is <c>true</c>.
+            </param>
+            <returns>
+            Returns the list of attributes that were found.
+            If inherit is true, attributes from the entity itself are returned first; followed by attributes inherited from the base entity.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAttribute(ICSharpCode.NRefactory.TypeSystem.IEntity,ICSharpCode.NRefactory.TypeSystem.FullTypeName,System.Boolean)">
+            <summary>
+            Gets the attribute of the specified attribute type (or derived attribute types).
+            </summary>
+            <param name="entity">The entity on which the attributes are declared.</param>
+            <param name="attributeType">The attribute type to look for.</param>
+            <param name="inherit">
+            Specifies whether attributes inherited from base classes and base members (if the given <paramref name="entity"/> in an <c>override</c>)
+            should be returned. The default is <c>true</c>.
+            </param>
+            <returns>
+            Returns the attribute that was found; or <c>null</c> if none was found.
+            If inherit is true, an from the entity itself will be returned if possible;
+            and the base entity will only be searched if none exists.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAttributes(ICSharpCode.NRefactory.TypeSystem.IEntity,ICSharpCode.NRefactory.TypeSystem.FullTypeName,System.Boolean)">
+            <summary>
+            Gets the attributes of the specified attribute type (or derived attribute types).
+            </summary>
+            <param name="entity">The entity on which the attributes are declared.</param>
+            <param name="attributeType">The attribute type to look for.</param>
+            <param name="inherit">
+            Specifies whether attributes inherited from base classes and base members (if the given <paramref name="entity"/> in an <c>override</c>)
+            should be returned. The default is <c>true</c>.
+            </param>
+            <returns>
+            Returns the list of attributes that were found.
+            If inherit is true, attributes from the entity itself are returned first; followed by attributes inherited from the base entity.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetAttributes(ICSharpCode.NRefactory.TypeSystem.IEntity,System.Boolean)">
+            <summary>
+            Gets the attribute of the specified attribute type (or derived attribute types).
+            </summary>
+            <param name="entity">The entity on which the attributes are declared.</param>
+            <param name="inherit">
+            Specifies whether attributes inherited from base classes and base members (if the given <paramref name="entity"/> in an <c>override</c>)
+            should be returned. The default is <c>true</c>.
+            </param>
+            <returns>
+            Returns the attribute that was found; or <c>null</c> if none was found.
+            If inherit is true, an from the entity itself will be returned if possible;
+            and the base entity will only be searched if none exists.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.TypeSystemExtensions.GetTypeDefinition(ICSharpCode.NRefactory.TypeSystem.IAssembly,System.String,System.String,System.Int32)">
+            <summary>
+            Gets the type definition for a top-level type.
+            </summary>
+            <remarks>This method uses ordinal name comparison, not the compilation's name comparer.</remarks>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.FullTypeName">
+            <summary>
+            Holds the full name of a type definition.
+            A full type name uniquely identifies a type definition within a single assembly.
+            </summary>
+            <remarks>
+            A full type name can only represent type definitions, not arbitrary types.
+            It does not include any type arguments, and can not refer to array or pointer types.
+            
+            A full type name represented as reflection name has the syntax:
+            <c>NamespaceName '.' TopLevelTypeName ['`'#] { '+' NestedTypeName ['`'#] }</c>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.#ctor(ICSharpCode.NRefactory.TypeSystem.TopLevelTypeName)">
+            <summary>
+            Constructs a FullTypeName representing the given top-level type.
+            </summary>
+            <remarks>
+            FullTypeName has an implicit conversion operator from TopLevelTypeName,
+            so you can simply write:
+            <c>FullTypeName f = new TopLevelTypeName(...);</c>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.#ctor(System.String)">
+            <summary>
+            Constructs a FullTypeName by parsing the given reflection name.
+            Note that FullTypeName can only represent type definition names. If the reflection name
+            might refer to a parameterized type or array etc., use
+            <see cref="M:ICSharpCode.NRefactory.TypeSystem.ReflectionHelper.ParseReflectionName(System.String)"/> instead.
+            </summary>
+            <remarks>
+            Expected syntax: <c>NamespaceName '.' TopLevelTypeName ['`'#] { '+' NestedTypeName ['`'#] }</c>
+            where # are type parameter counts
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.FullTypeName.TopLevelTypeName">
+            <summary>
+            Gets the top-level type name.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.FullTypeName.IsNested">
+            <summary>
+            Gets whether this is a nested type.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.FullTypeName.NestingLevel">
+            <summary>
+            Gets the nesting level.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.FullTypeName.Name">
+            <summary>
+            Gets the name of the type.
+            For nested types, this is the name of the innermost type.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.FullTypeName.TypeParameterCount">
+            <summary>
+            Gets the total type parameter count.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.GetNestedTypeName(System.Int32)">
+            <summary>
+            Gets the name of the nested type at the given level.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.GetNestedTypeAdditionalTypeParameterCount(System.Int32)">
+            <summary>
+            Gets the number of additional type parameters of the nested type at the given level.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.GetDeclaringType">
+            <summary>
+            Gets the declaring type name.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">This is a top-level type name.</exception>
+            <example><c>new FullTypeName("NS.A+B+C").GetDeclaringType()</c> will return <c>new FullTypeName("NS.A+B")</c></example>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.FullTypeName.NestedType(System.String,System.Int32)">
+            <summary>
+            Creates a nested type name.
+            </summary>
+            <example><c>new FullTypeName("NS.A+B").NestedType("C", 1)</c> will return <c>new FullTypeName("NS.A+B+C`1")</c></example>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.None">
+            <summary>
+            Convert only the name.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowParameterList">
+            <summary>
+            Show the parameter list
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowParameterNames">
+            <summary>
+            Show names for parameters
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowAccessibility">
+            <summary>
+            Show the accessibility (private, public, etc.)
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowDefinitionKeyword">
+            <summary>
+            Show the definition key word (class, struct, Sub, Function, etc.)
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowDeclaringType">
+            <summary>
+            Show the declaring type for the member
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowModifiers">
+            <summary>
+            Show modifiers (virtual, override, etc.)
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowReturnType">
+            <summary>
+            Show the return type
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.UseFullyQualifiedTypeNames">
+            <summary>
+            Use fully qualified names for types.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowTypeParameterList">
+            <summary>
+            Show the list of type parameters on method and class declarations.
+            Type arguments for parameter/return types are always shown.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.ShowBody">
+            <summary>
+            For fields, events and methods: adds a semicolon at the end.
+            For properties: shows "{ get; }" or similar.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.ConversionFlags.UseFullyQualifiedEntityNames">
+            <summary>
+            Use fully qualified names for members.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IAmbience">
+            <summary>
+            Ambiences are used to convert type system symbols to text (usually for displaying the symbol to the user; e.g. in editor tooltips).
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly">
+            <summary>
+            Represents an unresolved assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.AssemblyName">
+            <summary>
+            Gets the assembly name (short name).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.FullAssemblyName">
+            <summary>
+            Gets the full assembly name (including public key token etc.)
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.Location">
+            <summary>
+            Gets the path to the assembly location. 
+            For projects it is the same as the output path.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.AssemblyAttributes">
+            <summary>
+            Gets the list of all assembly attributes in the project.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.ModuleAttributes">
+            <summary>
+            Gets the list of all module attributes in the project.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAssembly.TopLevelTypeDefinitions">
+            <summary>
+            Gets all non-nested types in the assembly.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IAssemblyReference.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves this assembly.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IAssembly">
+            <summary>
+            Represents an assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.UnresolvedAssembly">
+            <summary>
+            Gets the original unresolved assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.IsMainAssembly">
+            <summary>
+            Gets whether this assembly is the main assembly of the compilation.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.AssemblyName">
+            <summary>
+            Gets the assembly name (short name).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.FullAssemblyName">
+            <summary>
+            Gets the full assembly name (including public key token etc.)
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.AssemblyAttributes">
+            <summary>
+            Gets the list of all assembly attributes in the project.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.ModuleAttributes">
+            <summary>
+            Gets the list of all module attributes in the project.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IAssembly.InternalsVisibleTo(ICSharpCode.NRefactory.TypeSystem.IAssembly)">
+            <summary>
+            Gets whether the internals of this assembly are visible in the specified assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.RootNamespace">
+            <summary>
+            Gets the root namespace for this assembly.
+            </summary>
+            <remarks>
+            This always is the namespace without a name - it's unrelated to the 'root namespace' project setting.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IAssembly.GetTypeDefinition(ICSharpCode.NRefactory.TypeSystem.TopLevelTypeName)">
+            <summary>
+            Gets the type definition for a top-level type.
+            </summary>
+            <remarks>This method uses ordinal name comparison, not the compilation's name comparer.</remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAssembly.TopLevelTypeDefinitions">
+            <summary>
+            Gets all non-nested types in the assembly.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAttribute">
+            <summary>
+            Represents an unresolved attribute.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAttribute.Region">
+            <summary>
+            Gets the code region of this attribute.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedAttribute.CreateResolvedAttribute(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the attribute.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IAttribute">
+            <summary>
+            Represents an attribute.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAttribute.Region">
+            <summary>
+            Gets the code region of this attribute.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAttribute.AttributeType">
+            <summary>
+            Gets the type of the attribute.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAttribute.Constructor">
+            <summary>
+            Gets the constructor being used.
+            This property may return null if no matching constructor was found.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAttribute.PositionalArguments">
+            <summary>
+            Gets the positional arguments.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IAttribute.NamedArguments">
+            <summary>
+            Gets the named arguments passed to the attribute.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.MainAssembly">
+            <summary>
+            Gets the current assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.TypeResolveContext">
+            <summary>
+            Gets the type resolve context that specifies this compilation and no current assembly or entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.Assemblies">
+            <summary>
+            Gets the list of all assemblies in the compilation.
+            </summary>
+            <remarks>
+            This main assembly is the first entry in the list.
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.ReferencedAssemblies">
+            <summary>
+            Gets the referenced assemblies.
+            This list does not include the main assembly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.RootNamespace">
+            <summary>
+            Gets the root namespace of this compilation.
+            This is a merged version of the root namespaces of all assemblies.
+            </summary>
+            <remarks>
+            This always is the namespace without a name - it's unrelated to the 'root namespace' project setting.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.ICompilation.GetNamespaceForExternAlias(System.String)">
+            <summary>
+            Gets the root namespace for a given extern alias.
+            </summary>
+            <remarks>
+            If <paramref name="alias"/> is <c>null</c> or an empty string, this method
+            returns the global root namespace.
+            If no alias with the specified name exists, this method returns null.
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilation.NameComparer">
+            <summary>
+            Gets the name comparer for the language being compiled.
+            This is the string comparer used for the INamespace.GetTypeDefinition method.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.ICompilationProvider.Compilation">
+            <summary>
+            Gets the parent compilation.
+            This property never returns null.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IConstantValue">
+            <summary>
+            Represents an unresolved constant value.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IConstantValue.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the value of this constant.
+            </summary>
+            <param name="context">Context where the constant value will be used.</param>
+            <returns>Resolve result representing the constant value.
+            This method never returns null; in case of errors, an ErrorResolveResult will be returned.</returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity">
+            <summary>
+            Represents an unresolved entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.SymbolKind">
+            <summary>
+            Gets the entity type.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.Region">
+            <summary>
+            Gets the complete entity region (including header+body)
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.BodyRegion">
+            <summary>
+            Gets the entity body region.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.DeclaringTypeDefinition">
+            <summary>
+            Gets the declaring class.
+            For members, this is the class that contains the member.
+            For nested classes, this is the outer class. For top-level entities, this property returns null.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.UnresolvedFile">
+            <summary>
+            Gets the parsed file in which this entity is defined.
+            Returns null if this entity wasn't parsed from source code (e.g. loaded from a .dll with CecilLoader).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.Attributes">
+            <summary>
+            Gets the attributes on this entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.IsStatic">
+            <summary>
+            Gets whether this entity is static.
+            Returns true if either the 'static' or the 'const' modifier is set.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.IsAbstract">
+            <summary>
+            Returns whether this entity is abstract.
+            </summary>
+            <remarks>Static classes also count as abstract classes.</remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.IsSealed">
+            <summary>
+            Returns whether this entity is sealed.
+            </summary>
+            <remarks>Static classes also count as sealed classes.</remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.IsShadowing">
+            <summary>
+            Gets whether this member is declared to be shadowing another member with the same name.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEntity.IsSynthetic">
+            <summary>
+            Gets whether this member is generated by a macro/compiler feature.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IEntity">
+            <summary>
+            Represents a resolved entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.EntityType">
+            <summary>
+            Gets the entity type.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.Name">
+            <summary>
+            Gets the short name of the entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.Region">
+            <summary>
+            Gets the complete entity region (including header+body)
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.BodyRegion">
+            <summary>
+            Gets the entity body region.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.DeclaringTypeDefinition">
+            <summary>
+            Gets the declaring class.
+            For members, this is the class that contains the member.
+            For nested classes, this is the outer class. For top-level entities, this property returns null.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.DeclaringType">
+            <summary>
+            Gets/Sets the declaring type (incl. type arguments, if any).
+            This property will return null for top-level entities.
+            If this is not a specialized member, the value returned is equal to <see cref="P:ICSharpCode.NRefactory.TypeSystem.IEntity.DeclaringTypeDefinition"/>.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.ParentAssembly">
+            <summary>
+            The assembly in which this entity is defined.
+            This property never returns null.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.Attributes">
+            <summary>
+            Gets the attributes on this entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.Documentation">
+            <summary>
+            Gets the documentation for this entity.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.IsStatic">
+            <summary>
+            Gets whether this entity is static.
+            Returns true if either the 'static' or the 'const' modifier is set.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.IsAbstract">
+            <summary>
+            Returns whether this entity is abstract.
+            </summary>
+            <remarks>Static classes also count as abstract classes.</remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.IsSealed">
+            <summary>
+            Returns whether this entity is sealed.
+            </summary>
+            <remarks>Static classes also count as sealed classes.</remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.IsShadowing">
+            <summary>
+            Gets whether this member is declared to be shadowing another member with the same name.
+            (C# 'new' keyword)
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IEntity.IsSynthetic">
+            <summary>
+            Gets whether this member is generated by a macro/compiler feature.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedEvent.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context for looking up the member. The context must specify the current assembly.
+            A <see cref="T:ICSharpCode.NRefactory.TypeSystem.SimpleTypeResolveContext"/> that specifies the current assembly is sufficient.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField">
+            <summary>
+            Represents a field or constant.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField.IsReadOnly">
+            <summary>
+            Gets whether this field is readonly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField.IsVolatile">
+            <summary>
+            Gets whether this field is volatile.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField.IsConst">
+            <summary>
+            Gets whether this field is a constant (C#-like const).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField.IsFixed">
+            <summary>
+            Gets whether this field is a fixed size buffer (C#-like fixed).
+            If this is true, then ConstantValue contains the size of the buffer.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedField.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context for looking up the member. The context must specify the current assembly.
+            A <see cref="T:ICSharpCode.NRefactory.TypeSystem.SimpleTypeResolveContext"/> that specifies the current assembly is sufficient.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IField">
+            <summary>
+            Represents a field or constant.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IField.Name">
+            <summary>
+            Gets the name of the field.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IField.Region">
+            <summary>
+            Gets the region where the field is declared.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IField.IsReadOnly">
+            <summary>
+            Gets whether this field is readonly.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IField.IsVolatile">
+            <summary>
+            Gets whether this field is volatile.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IField.IsFixed">
+            <summary>
+            Gets whether this field is a fixed size buffer (C#-like fixed).
+            If this is true, then ConstantValue contains the size of the buffer.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IFreezable.IsFrozen">
+            <summary>
+            Gets if this instance is frozen. Frozen instances are immutable and thus thread-safe.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IFreezable.Freeze">
+            <summary>
+            Freezes this instance.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.InterningProvider">
+            <summary>
+            Provider used for interning.
+            </summary>
+            <remarks>
+            A simple IInterningProvider implementation could use 3 dictionaries:
+             1. using value equality comparer (for certain types known to implement value equality, e.g. string and IType)
+             2. using comparer that calls into ISupportsInterning (for types implementing ISupportsInterning)
+             3. list comparer (for InternList method)
+            
+            On the first Intern()-call, the provider tells the object to prepare for interning (ISupportsInterning.PrepareForInterning)
+            and stores it into a dictionary. On further Intern() calls, the original object is returned for all equal objects.
+            This allows reducing the memory usage by using a single object instance where possible.
+            
+            Interning provider implementations could also use the interning logic for different purposes:
+            for example, it could be used to determine which objects are used jointly between multiple type definitions
+            and which are used only within a single type definition. Then a persistent file format could be organized so
+            that shared objects are loaded only once, yet non-shared objects get loaded lazily together with the class.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InterningProvider.Intern(ICSharpCode.NRefactory.TypeSystem.ISupportsInterning)">
+            <summary>
+            Interns the specified object.
+            
+            If the object is freezable, it will be frozen.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InterningProvider.Intern``1(``0)">
+            <summary>
+            Interns the specified object.
+            
+            If the object is freezable, it will be frozen.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InterningProvider.Intern(System.String)">
+            <summary>
+            Interns the specified string.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InterningProvider.InternValue(System.Object)">
+            <summary>
+            Inters a boxed value type.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InterningProvider.InternList``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Interns the given list. Uses reference equality to compare the list elements.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember">
+            <summary>
+            Method/field/property/event.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.ReturnType">
+            <summary>
+            Gets the return type of this member.
+            This property never returns null.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.IsExplicitInterfaceImplementation">
+            <summary>
+            Gets whether this member is explicitly implementing an interface.
+            If this property is true, the member can only be called through the interfaces it implements.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.ExplicitInterfaceImplementations">
+            <summary>
+            Gets the interfaces that are explicitly implemented by this member.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.IsVirtual">
+            <summary>
+            Gets if the member is virtual. Is true only if the "virtual" modifier was used, but non-virtual
+            members can be overridden, too; if they are abstract or overriding a method.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.IsOverride">
+            <summary>
+            Gets whether this member is overriding another member.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.IsOverridable">
+            <summary>
+            Gets if the member can be overridden. Returns true when the member is "abstract", "virtual" or "override" but not "sealed".
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context for looking up the member. The context must specify the current assembly.
+            A <see cref="T:ICSharpCode.NRefactory.TypeSystem.SimpleTypeResolveContext"/> that specifies the current assembly is sufficient.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember.CreateResolved(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Creates the resolved member.
+            </summary>
+            <param name="context">
+            The language-specific context that includes the parent type definition.
+            <see cref="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedTypeDefinition.CreateResolveContext(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)"/>
+            </param>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMemberReference.DeclaringTypeReference">
+            <summary>
+            Gets the declaring type reference for the member.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IMemberReference.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context to use for resolving this member reference.
+            Which kind of context is required depends on the which kind of member reference this is;
+            please consult the documentation of the method that was used to create this member reference,
+            or that of the class implementing this method.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IMember">
+            <summary>
+            Method/field/property/event.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.MemberDefinition">
+            <summary>
+            Gets the original member definition for this member.
+            Returns <c>this</c> if this is not a specialized member.
+            Specialized members are the result of overload resolution with type substitution.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.UnresolvedMember">
+            <summary>
+            Gets the unresolved member instance from which this member was created.
+            This property may return <c>null</c> for special members that do not have a corresponding unresolved member instance.
+            </summary>
+            <remarks>
+            For specialized members, this property returns the unresolved member for the original member definition.
+            For partial methods, this property returns the implementing partial method declaration, if one exists, and the
+            defining partial method declaration otherwise.
+            For the members used to represent the built-in C# operators like "operator +(int, int);", this property returns <c>null</c>.
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.ReturnType">
+            <summary>
+            Gets the return type of this member.
+            This property never returns <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.ImplementedInterfaceMembers">
+            <summary>
+            Gets the interface members implemented by this member (both implicitly and explicitly).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.IsExplicitInterfaceImplementation">
+            <summary>
+            Gets whether this member is explicitly implementing an interface.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.IsVirtual">
+            <summary>
+            Gets if the member is virtual. Is true only if the "virtual" modifier was used, but non-virtual
+            members can be overridden, too; if they are abstract or overriding a method.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.IsOverride">
+            <summary>
+            Gets whether this member is overriding another member.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.IsOverridable">
+            <summary>
+            Gets if the member can be overridden. Returns true when the member is "abstract", "virtual" or "override" but not "sealed".
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IMember.ToMemberReference">
+            <summary>
+            Creates a member reference that can be used to rediscover this member in another compilation.
+            </summary>
+            <remarks>
+            If this member is specialized using open generic types, the resulting member reference will need to be looked up in an appropriate generic context.
+            Otherwise, the main resolve context of a compilation is sufficient.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IMember.ToReference">
+            <summary>
+            Creates a member reference that can be used to rediscover this member in another compilation.
+            </summary>
+            <remarks>
+            If this member is specialized using open generic types, the resulting member reference will need to be looked up in an appropriate generic context.
+            Otherwise, the main resolve context of a compilation is sufficient.
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMember.Substitution">
+            <summary>
+            Gets the substitution belonging to this specialized member.
+            Returns TypeParameterSubstitution.Identity for not specialized members.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IMember.Specialize(ICSharpCode.NRefactory.TypeSystem.TypeParameterSubstitution)">
+            <summary>
+            Specializes this member with the given substitution.
+            If this member is already specialized, the new substitution is composed with the existing substition.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.ReturnTypeAttributes">
+            <summary>
+            Gets the attributes associated with the return type. (e.g. [return: MarshalAs(...)])
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.IsPartial">
+            <summary>
+            Gets whether the method is a C#-style partial method.
+            Check <see cref="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.HasBody"/> to test if it is a partial method declaration or implementation.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.IsAsync">
+            <summary>
+            Gets whether the method is a C#-style async method.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.HasBody">
+            <summary>
+            Gets whether the method has a body.
+            This property returns <c>false</c> for <c>abstract</c> or <c>extern</c> methods,
+            or for <c>partial</c> methods without implementation.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.AccessorOwner">
+            <summary>
+            If this method is an accessor, returns a reference to the corresponding property/event.
+            Otherwise, returns null.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context for looking up the member. The context must specify the current assembly.
+            A <see cref="T:ICSharpCode.NRefactory.TypeSystem.SimpleTypeResolveContext"/> that specifies the current assembly is sufficient.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IMethod">
+            <summary>
+            Represents a method, constructor, destructor or operator.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.Parts">
+            <summary>
+            Gets the unresolved method parts.
+            For partial methods, this returns all parts.
+            Otherwise, this returns an array with a single element (new[] { UnresolvedMember }).
+            NOTE: The type will change to IReadOnlyList&lt;IUnresolvedMethod&gt; in future versions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.ReturnTypeAttributes">
+            <summary>
+            Gets the attributes associated with the return type. (e.g. [return: MarshalAs(...)])
+            NOTE: The type will change to IReadOnlyList&lt;IAttribute&gt; in future versions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.TypeParameters">
+            <summary>
+            Gets the type parameters of this method; or an empty list if the method is not generic.
+            NOTE: The type will change to IReadOnlyList&lt;ITypeParameter&gt; in future versions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.IsParameterized">
+            <summary>
+            Gets whether this is a generic method that has been parameterized.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.TypeArguments">
+            <summary>
+            Gets the type arguments passed to this method.
+            If the method is generic but not parameterized yet, this property returns the type parameters,
+            as if the method was parameterized with its own type arguments (<c>void M&lt;T&gt;() { M&lt;T&gt;(); }</c>).
+            
+            NOTE: The type will change to IReadOnlyList&lt;IType&gt; in future versions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.IsPartial">
+            <summary>
+            Gets whether the method is a C#-style partial method.
+            A call to such a method is ignored by the compiler if the partial method has no body.
+            </summary>
+            <seealso cref="P:ICSharpCode.NRefactory.TypeSystem.IMethod.HasBody"/>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.IsAsync">
+            <summary>
+            Gets whether the method is a C#-style async method.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.HasBody">
+            <summary>
+            Gets whether the method has a body.
+            This property returns <c>false</c> for <c>abstract</c> or <c>extern</c> methods,
+            or for <c>partial</c> methods without implementation.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.IsAccessor">
+            <summary>
+            Gets whether the method is a property/event accessor.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.AccessorOwner">
+            <summary>
+            If this method is an accessor, returns the corresponding property/event.
+            Otherwise, returns null.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IMethod.ReducedFrom">
+            <summary>
+            If this method is reduced from an extension method return the original method, <c>null</c> otherwise.
+            A reduced method doesn't contain the extension method parameter. That means that has one parameter less than it's definition.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IMethod.Specialize(ICSharpCode.NRefactory.TypeSystem.TypeParameterSubstitution)">
+            <summary>
+            Specializes this method with the given substitution.
+            If this method is already specialized, the new substitution is composed with the existing substition.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamedElement.FullName">
+            <summary>
+            Gets the fully qualified name of the class the return type is pointing to.
+            </summary>
+            <returns>
+            "System.Int32[]" for int[]<br/>
+            "System.Collections.Generic.List" for List&lt;string&gt;
+            "System.Environment.SpecialFolder" for Environment.SpecialFolder
+            </returns>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamedElement.Name">
+            <summary>
+            Gets the short name of the class the return type is pointing to.
+            </summary>
+            <returns>
+            "Int32[]" for int[]<br/>
+            "List" for List&lt;string&gt;
+            "SpecialFolder" for Environment.SpecialFolder
+            </returns>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamedElement.ReflectionName">
+            <summary>
+            Gets the full reflection name of the element.
+            </summary>
+            <remarks>
+            For types, the reflection name can be parsed back into a ITypeReference by using
+            <see cref="M:ICSharpCode.NRefactory.TypeSystem.ReflectionHelper.ParseReflectionName(System.String)"/>.
+            </remarks>
+            <returns>
+            "System.Int32[]" for int[]<br/>
+            "System.Int32[][,]" for C# int[,][]<br/>
+            "System.Collections.Generic.List`1[[System.String]]" for List&lt;string&gt;
+            "System.Environment+SpecialFolder" for Environment.SpecialFolder
+            </returns>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamedElement.Namespace">
+            <summary>
+            Gets the full name of the namespace containing this entity.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.INamespace">
+            <summary>
+            Represents a resolved namespace.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.ExternAlias">
+            <summary>
+            Gets the extern alias for this namespace.
+            Returns an empty string for normal namespaces.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.FullName">
+            <summary>
+            Gets the full name of this namespace. (e.g. "System.Collections")
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.Name">
+            <summary>
+            Gets the short name of this namespace (e.g. "Collections").
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.ParentNamespace">
+            <summary>
+            Gets the parent namespace.
+            Returns null if this is the root namespace.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.ChildNamespaces">
+            <summary>
+            Gets the child namespaces in this namespace.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.Types">
+            <summary>
+            Gets the types in this namespace.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.INamespace.ContributingAssemblies">
+            <summary>
+            Gets the assemblies that contribute types to this namespace (or to child namespaces).
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.INamespace.GetChildNamespace(System.String)">
+            <summary>
+            Gets a direct child namespace by its short name.
+            Returns null when the namespace cannot be found.
+            </summary>
+            <remarks>
+            This method uses the compilation's current string comparer.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.INamespace.GetTypeDefinition(System.String,System.Int32)">
+            <summary>
+            Gets the type with the specified short name and type parameter count.
+            Returns null if the type cannot be found.
+            </summary>
+            <remarks>
+            This method uses the compilation's current string comparer.
+            </remarks>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.InheritanceHelper">
+            <summary>
+            Provides helper methods for inheritance.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InheritanceHelper.GetBaseMember(ICSharpCode.NRefactory.TypeSystem.IMember)">
+            <summary>
+            Gets the base member that has the same signature.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InheritanceHelper.GetBaseMembers(ICSharpCode.NRefactory.TypeSystem.IMember,System.Boolean)">
+            <summary>
+            Gets all base members that have the same signature.
+            </summary>
+            <returns>
+            List of base members with the same signature. The member from the derived-most base class is returned first.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.InheritanceHelper.GetDerivedMember(ICSharpCode.NRefactory.TypeSystem.IMember,ICSharpCode.NRefactory.TypeSystem.ITypeDefinition)">
+            <summary>
+            Finds the member declared in 'derivedType' that has the same signature (could override) 'baseMember'.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IntersectionType">
+            <summary>
+            Represents the intersection of several types.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.Name">
+            <summary>
+            Gets the name of the variable.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.Region">
+            <summary>
+            Gets the declaration region of the variable.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.Type">
+            <summary>
+            Gets the type of the variable.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.Attributes">
+            <summary>
+            Gets the list of attributes.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.IsRef">
+            <summary>
+            Gets whether this parameter is a C# 'ref' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.IsOut">
+            <summary>
+            Gets whether this parameter is a C# 'out' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.IsParams">
+            <summary>
+            Gets whether this parameter is a C# 'params' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameter.IsOptional">
+            <summary>
+            Gets whether this parameter is optional.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.Attributes">
+            <summary>
+            Gets the list of attributes.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.IsIn">
+            <summary>
+            Gets whether this parameter is a C# 'in' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.IsRef">
+            <summary>
+            Gets whether this parameter is a C# 'ref' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.IsOut">
+            <summary>
+            Gets whether this parameter is a C# 'out' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.IsParams">
+            <summary>
+            Gets whether this parameter is a C# 'params' parameter.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.IsOptional">
+            <summary>
+            Gets whether this parameter is optional.
+            The default value is given by the <see cref="P:ICSharpCode.NRefactory.TypeSystem.IVariable.ConstantValue"/> property.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IParameter.Owner">
+            <summary>
+            Gets the owner of this parameter.
+            May return null; for example when parameters belong to lambdas or anonymous methods.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedParameterizedMember">
+            <summary>
+            Represents a method or property.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IParameterizedMember">
+            <summary>
+            Represents a method or property.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile">
+            <summary>
+            Represents a single file that was parsed.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.FileName">
+            <summary>
+            Returns the full path of the file.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.LastWriteTime">
+            <summary>
+            Gets the time when the file was last written.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.TopLevelTypeDefinitions">
+            <summary>
+            Gets all top-level type definitions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.AssemblyAttributes">
+            <summary>
+            Gets all assembly attributes that are defined in this file.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.ModuleAttributes">
+            <summary>
+            Gets all module attributes that are defined in this file.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.GetTopLevelTypeDefinition(ICSharpCode.NRefactory.TextLocation)">
+            <summary>
+            Gets the top-level type defined at the specified location.
+            Returns null if no type is defined at that location.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.GetInnermostTypeDefinition(ICSharpCode.NRefactory.TextLocation)">
+            <summary>
+            Gets the type (potentially a nested type) defined at the specified location.
+            Returns null if no type is defined at that location.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.GetMember(ICSharpCode.NRefactory.TextLocation)">
+            <summary>
+            Gets the member defined at the specified location.
+            Returns null if no member is defined at that location.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile.Errors">
+            <summary>
+            Gets the parser errors.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IProjectContent">
+            <summary>
+            Represents an assembly consisting of source code (parsed files).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IProjectContent.ProjectFileName">
+            <summary>
+            Gets the path to the project file (e.g. .csproj).
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.GetFile(System.String)">
+            <summary>
+            Gets a parsed file by its file name.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IProjectContent.Files">
+            <summary>
+            Gets the list of all files in the project content.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IProjectContent.AssemblyReferences">
+            <summary>
+            Gets the referenced assemblies.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IProjectContent.CompilerSettings">
+            <summary>
+            Gets the compiler settings object.
+            The concrete type of the settings object depends on the programming language used to implement this project.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.CreateCompilation">
+            <summary>
+            Creates a new <see cref="T:ICSharpCode.NRefactory.TypeSystem.ICompilation"/> that allows resolving within this project.
+            </summary>
+            <remarks>
+            This method does not support <see cref="T:ICSharpCode.NRefactory.TypeSystem.ProjectReference"/>s. When dealing with a solution
+            containing multiple projects, consider using <see cref="M:ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot.GetCompilation(ICSharpCode.NRefactory.TypeSystem.IProjectContent)"/> instead.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.CreateCompilation(ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot)">
+            <summary>
+            Creates a new <see cref="T:ICSharpCode.NRefactory.TypeSystem.ICompilation"/> that allows resolving within this project.
+            </summary>
+            <param name="solutionSnapshot">The parent solution snapshot to use for the compilation.</param>
+            <remarks>
+            This method is intended to be called by ISolutionSnapshot implementations. Other code should
+            call <see cref="M:ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot.GetCompilation(ICSharpCode.NRefactory.TypeSystem.IProjectContent)"/> instead.
+            This method always creates a new compilation, even if the solution snapshot already contains
+            one for this project.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.SetAssemblyName(System.String)">
+            <summary>
+            Changes the assembly name of this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.SetProjectFileName(System.String)">
+            <summary>
+            Changes the project file name of this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.SetLocation(System.String)">
+            <summary>
+            Changes the path to the assembly location (the output path where the project compiles to).
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.AddAssemblyReferences(System.Collections.Generic.IEnumerable{ICSharpCode.NRefactory.TypeSystem.IAssemblyReference})">
+            <summary>
+            Add assembly references to this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.AddAssemblyReferences(ICSharpCode.NRefactory.TypeSystem.IAssemblyReference[])">
+            <summary>
+            Add assembly references to this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.RemoveAssemblyReferences(System.Collections.Generic.IEnumerable{ICSharpCode.NRefactory.TypeSystem.IAssemblyReference})">
+            <summary>
+            Removes assembly references from this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.RemoveAssemblyReferences(ICSharpCode.NRefactory.TypeSystem.IAssemblyReference[])">
+            <summary>
+            Removes assembly references from this project content.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.AddOrUpdateFiles(System.Collections.Generic.IEnumerable{ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile})">
+            <summary>
+            Adds the specified files to the project content.
+            If a file with the same name already exists, updated the existing file.
+            </summary>
+            <remarks>
+            You can create an unresolved file by calling <c>ToTypeSystem()</c> on a syntax tree.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.AddOrUpdateFiles(ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile[])">
+            <summary>
+            Adds the specified files to the project content.
+            If a file with the same name already exists, this method updates the existing file.
+            </summary>
+            <remarks>
+            You can create an unresolved file by calling <c>ToTypeSystem()</c> on a syntax tree.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.RemoveFiles(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes the files with the specified names.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.RemoveFiles(System.String[])">
+            <summary>
+            Removes the files with the specified names.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.UpdateProjectContent(ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile,ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile)">
+            <summary>
+            Removes types and attributes from oldFile from the project, and adds those from newFile.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.UpdateProjectContent(System.Collections.Generic.IEnumerable{ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile},System.Collections.Generic.IEnumerable{ICSharpCode.NRefactory.TypeSystem.IUnresolvedFile})">
+            <summary>
+            Removes types and attributes from oldFiles from the project, and adds those from newFiles.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IProjectContent.SetCompilerSettings(System.Object)">
+            <summary>
+            Sets the compiler settings object.
+            The concrete type of the settings object depends on the programming language used to implement this project.
+            Using the incorrect type of settings object results in an <see cref="T:System.ArgumentException"/>.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedProperty">
+            <summary>
+            Represents a property or indexer.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IUnresolvedProperty.Resolve(ICSharpCode.NRefactory.TypeSystem.ITypeResolveContext)">
+            <summary>
+            Resolves the member.
+            </summary>
+            <param name="context">
+            Context for looking up the member. The context must specify the current assembly.
+            A <see cref="T:ICSharpCode.NRefactory.TypeSystem.SimpleTypeResolveContext"/> that specifies the current assembly is sufficient.
+            </param>
+            <returns>
+            Returns the resolved member, or <c>null</c> if the member could not be found.
+            </returns>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IProperty">
+            <summary>
+            Represents a property or indexer.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot">
+            <summary>
+            Represents a snapshot of the whole solution (multiple compilations).
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot.GetProjectContent(System.String)">
+            <summary>
+            Gets the project content with the specified file name.
+            Returns null if no such project exists in the solution.
+            </summary>
+            <remarks>
+            This method is used by the <see cref="T:ICSharpCode.NRefactory.TypeSystem.ProjectReference"/> class.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.ISolutionSnapshot.GetCompilation(ICSharpCode.NRefactory.TypeSystem.IProjectContent)">
+            <summary>
+            Gets the compilation for the specified project.
+            The project must be a part of the solution (passed to the solution snapshot's constructor).
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.ISupportsInterning">
+            <summary>
+            Interface for TypeSystem objects that support interning.
+            See <see cref="T:ICSharpCode.NRefactory.TypeSystem.InterningProvider"/> for more information.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.ISupportsInterning.GetHashCodeForInterning">
+            <summary>
+            Gets a hash code for interning.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.ISupportsInterning.EqualsForInterning(ICSharpCode.NRefactory.TypeSystem.ISupportsInterning)">
+            <summary>
+            Equality test for interning.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IType">
+            <summary>
+            This interface represents a resolved type in the type system.
+            </summary>
+            <remarks>
+            <para>
+            A type is potentially
+            - a type definition (<see cref="T:ICSharpCode.NRefactory.TypeSystem.ITypeDefinition"/>, i.e. a class, struct, interface, delegate, or built-in primitive type)
+            - a parameterized type (<see cref="T:ICSharpCode.NRefactory.TypeSystem.ParameterizedType"/>, e.g. List&lt;int>)
+            - a type parameter (<see cref="T:ICSharpCode.NRefactory.TypeSystem.ITypeParameter"/>, e.g. T)
+            - an array (<see cref="T:ICSharpCode.NRefactory.TypeSystem.ArrayType"/>)
+            - a pointer (<see cref="T:ICSharpCode.NRefactory.TypeSystem.PointerType"/>)
+            - a managed reference (<see cref="T:ICSharpCode.NRefactory.TypeSystem.ByReferenceType"/>)
+            - one of the special types (<see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.UnknownType"/>, <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.NullType"/>,
+                 <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.Dynamic"/>, <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.UnboundTypeArgument"/>)
+            
+            The <see cref="P:ICSharpCode.NRefactory.TypeSystem.IType.Kind"/> property can be used to switch on the kind of a type.
+            </para>
+            <para>
+            IType uses the null object pattern: <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.UnknownType"/> serves as the null object.
+            Methods or properties returning IType never return null unless documented otherwise.
+            </para>
+            <para>
+            Types should be compared for equality using the <see cref="M:System.IEquatable`1.Equals(`0)"/> method.
+            Identical types do not necessarily use the same object reference.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.IsReferenceType">
+            <summary>
+            Gets whether the type is a reference type or value type.
+            </summary>
+            <returns>
+            true, if the type is a reference type.
+            false, if the type is a value type.
+            null, if the type is not known (e.g. unconstrained generic type parameter or type not found)
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetDefinition">
+            <summary>
+            Gets the underlying type definition.
+            Can return null for types which do not have a type definition (for example arrays, pointers, type parameters).
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.DeclaringType">
+            <summary>
+            Gets the parent type, if this is a nested type.
+            Returns null for top-level types.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.TypeParameterCount">
+            <summary>
+            Gets the number of type parameters.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.TypeArguments">
+            <summary>
+            Gets the type arguments passed to this type.
+            If this type is a generic type definition that is not parameterized, this property returns the type parameters,
+            as if the type was parameterized with its own type arguments (<c>class C&lt;T&gt; { C&lt;T&gt; field; }</c>).
+            
+            NOTE: The type will change to IReadOnlyList&lt;IType&gt; in future versions.
+            </summary>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.IsParameterized">
+            <summary>
+            If true the type represents an instance of a generic type.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.AcceptVisitor(ICSharpCode.NRefactory.TypeSystem.TypeVisitor)">
+            <summary>
+            Calls ITypeVisitor.Visit for this type.
+            </summary>
+            <returns>The return value of the ITypeVisitor.Visit call</returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.VisitChildren(ICSharpCode.NRefactory.TypeSystem.TypeVisitor)">
+            <summary>
+            Calls ITypeVisitor.Visit for all children of this type, and reconstructs this type with the children based
+            on the return values of the visit calls.
+            </summary>
+            <returns>A copy of this type, with all children replaced by the return value of the corresponding visitor call.
+            If the visitor returned the original types for all children (or if there are no children), returns <c>this</c>.
+            </returns>
+        </member>
+        <member name="P:ICSharpCode.NRefactory.TypeSystem.IType.DirectBaseTypes">
+            <summary>
+            Gets the direct base types.
+            </summary>
+            <returns>Returns the direct base types including interfaces</returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.ToTypeReference">
+            <summary>
+            Creates a type reference that can be used to look up a type equivalent to this type in another compilation.
+            </summary>
+            <remarks>
+            If this type contains open generics, the resulting type reference will need to be looked up in an appropriate generic context.
+            Otherwise, the main resolve context of a compilation is sufficient.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetSubstitution">
+            <summary>
+            Gets a type visitor that performs the substitution of class type parameters with the type arguments
+            of this parameterized type.
+            Returns TypeParameterSubstitution.Identity if the type is not parametrized.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetSubstitution(System.Collections.Generic.IList{ICSharpCode.NRefactory.TypeSystem.IType})">
+            <summary>
+            Gets a type visitor that performs the substitution of class type parameters with the type arguments
+            of this parameterized type,
+            and also substitutes method type parameters with the specified method type arguments.
+            Returns TypeParameterSubstitution.Identity if the type is not parametrized.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetNestedTypes(System.Predicate{ICSharpCode.NRefactory.TypeSystem.ITypeDefinition},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets inner classes (including inherited inner classes).
+            </summary>
+            <param name="filter">The filter used to select which types to return.
+            The filter is tested on the original type definitions (before parameterization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            <para>
+            If the nested type is generic, this method will return a parameterized type,
+            where the additional type parameters are set to <see cref="F:ICSharpCode.NRefactory.TypeSystem.SpecialType.UnboundTypeArgument"/>.
+            </para>
+            <para>
+            Type parameters belonging to the outer class will have the value copied from the outer type
+            if it is a parameterized type. Otherwise, those existing type parameters will be self-parameterized,
+            and thus 'leaked' to the caller in the same way the GetMembers() method does not specialize members
+            from an <see cref="T:ICSharpCode.NRefactory.TypeSystem.ITypeDefinition"/> and 'leaks' type parameters in member signatures.
+            </para>
+            </remarks>
+            <example>
+            <code>
+            class Base&lt;T> {
+            	class Nested&lt;X> {}
+            }
+            class Derived&lt;A, B> : Base&lt;B> {}
+            
+            Derived[string,int].GetNestedTypes() = { Base`1+Nested`1[int, unbound] }
+            Derived.GetNestedTypes() = { Base`1+Nested`1[`1, unbound] }
+            Base[`1].GetNestedTypes() = { Base`1+Nested`1[`1, unbound] }
+            Base.GetNestedTypes() = { Base`1+Nested`1[`0, unbound] }
+            </code>
+            </example>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetNestedTypes(System.Collections.Generic.IList{ICSharpCode.NRefactory.TypeSystem.IType},System.Predicate{ICSharpCode.NRefactory.TypeSystem.ITypeDefinition},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets inner classes (including inherited inner classes)
+            that have <c>typeArguments.Count</c> additional type parameters.
+            </summary>
+            <param name="typeArguments">The type arguments passed to the inner class</param>
+            <param name="filter">The filter used to select which types to return.
+            The filter is tested on the original type definitions (before parameterization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            Type parameters belonging to the outer class will have the value copied from the outer type
+            if it is a parameterized type. Otherwise, those existing type parameters will be self-parameterized,
+            and thus 'leaked' to the caller in the same way the GetMembers() method does not specialize members
+            from an <see cref="T:ICSharpCode.NRefactory.TypeSystem.ITypeDefinition"/> and 'leaks' type parameters in member signatures.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetConstructors(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all instance constructors for this type.
+            </summary>
+            <param name="filter">The filter used to select which constructors to return.
+            The filter is tested on the original method definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            <para>The result does not include static constructors.
+            Constructors in base classes are not returned by default, as GetMemberOptions.IgnoreInheritedMembers is the default value.</para>
+            <para>
+            For methods on parameterized types, type substitution will be performed on the method signature,
+            and the appropriate <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedMethod"/> will be returned.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetMethods(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all methods that can be called on this type.
+            </summary>
+            <param name="filter">The filter used to select which methods to return.
+            The filter is tested on the original method definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            <para>
+            The result does not include constructors or accessors.
+            </para>
+            <para>
+            For methods on parameterized types, type substitution will be performed on the method signature,
+            and the appropriate <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedMethod"/> will be returned.
+            </para>
+            <para>
+            If the method being returned is generic, and this type is a parameterized type where the type
+            arguments involve another method's type parameters, the resulting specialized signature
+            will be ambiguous as to which method a type parameter belongs to.
+            For example, "List[[``0]].GetMethods()" will return "ConvertAll(Converter`2[[``0, ``0]])".
+            
+            If possible, use the other GetMethods() overload to supply type arguments to the method,
+            so that both class and method type parameter can be substituted at the same time, so that
+            the ambiguity can be avoided.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetMethods(System.Collections.Generic.IList{ICSharpCode.NRefactory.TypeSystem.IType},System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all generic methods that can be called on this type with the specified type arguments.
+            </summary>
+            <param name="typeArguments">The type arguments used for the method call.</param>
+            <param name="filter">The filter used to select which methods to return.
+            The filter is tested on the original method definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            <para>The result does not include constructors or accessors.</para>
+            <para>
+            Type substitution will be performed on the method signature, creating a <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedMethod"/>
+            with the specified type arguments.
+            </para>
+            <para>
+            When the list of type arguments is empty, this method acts like the GetMethods() overload without
+            the type arguments parameter - that is, it also returns generic methods,
+            and the other overload's remarks about ambiguous signatures apply here as well.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetProperties(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedProperty},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all properties that can be called on this type.
+            </summary>
+            <param name="filter">The filter used to select which properties to return.
+            The filter is tested on the original property definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            For properties on parameterized types, type substitution will be performed on the property signature,
+            and the appropriate <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedProperty"/> will be returned.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetFields(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedField},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all fields that can be accessed on this type.
+            </summary>
+            <param name="filter">The filter used to select which constructors to return.
+            The filter is tested on the original field definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            For fields on parameterized types, type substitution will be performed on the field's return type,
+            and the appropriate <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedField"/> will be returned.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetEvents(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedEvent},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all events that can be accessed on this type.
+            </summary>
+            <param name="filter">The filter used to select which events to return.
+            The filter is tested on the original event definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            For fields on parameterized types, type substitution will be performed on the event's return type,
+            and the appropriate <see cref="T:ICSharpCode.NRefactory.TypeSystem.Implementation.SpecializedEvent"/> will be returned.
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetMembers(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMember},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all members that can be called on this type.
+            </summary>
+            <param name="filter">The filter used to select which members to return.
+            The filter is tested on the original member definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            <para>
+            The resulting list is the union of GetFields(), GetProperties(), GetMethods() and GetEvents().
+            It does not include constructors.
+            For parameterized types, type substitution will be performed.
+            </para>
+            <para>
+            For generic methods, the remarks about ambiguous signatures from the
+            <see cref="M:ICSharpCode.NRefactory.TypeSystem.IType.GetMethods(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)"/> method apply here as well.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.TypeSystem.IType.GetAccessors(System.Predicate{ICSharpCode.NRefactory.TypeSystem.IUnresolvedMethod},ICSharpCode.NRefactory.TypeSystem.GetMemberOptions)">
+            <summary>
+            Gets all accessors belonging to properties or events on this type.
+            </summary>
+            <param name="filter">The filter used to select which members to return.
+            The filter is tested on the original member definitions (before specialization).</param>
+            <param name="options">Specified additional options for the GetMembers() operation.</param>
+            <remarks>
+            Accessors are not returned by GetMembers() or GetMethods().
+            </remarks>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.GetMemberOptions.None">
+            <summary>
+            No options specified - this is the default.
+            Members will be specialized, and inherited members will be included.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.GetMemberOptions.ReturnMemberDefinitions">
+            <summary>
+            Do not specialize the returned members - directly return the definitions.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.TypeSystem.GetMemberOptions.IgnoreInheritedMembers">
+            <summary>
+            Do not list inherited members - only list members defined directly on this type.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.TypeSystem.IUnresolvedTypeDefinition">
+            <summary>
+            Represents an unresolved class, enum, interface, struct, delegate or VB module.
+            For partial classes, an unresolved type definition 

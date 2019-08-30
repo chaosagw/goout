@@ -1,0 +1,117 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AroundSelectedFeatures104
+</name>
+</assembly>
+<members>
+<member name="T:AroundSelectedFeatures104.My.ThisAddIn">
+<summary>
+A class for looking up declarative information in the associated configuration xml file (.esriaddinx).
+</summary>
+</member>
+<member name="T:AroundSelectedFeatures104.My.ThisAddIn.IDs">
+<summary>
+A class for looking up Add-in id strings declared in the associated configuration xml file (.esriaddinx).
+</summary>
+</member>
+<member name="P:AroundSelectedFeatures104.My.ThisAddIn.IDs.GoJunkai">
+<summary>
+Returns 'rkkc_AroundSelectedFeatures104_GoJunkai', the id declared for Add-in Button class 'GoJunkai'
+</summary>
+</member>
+<member name="P:AroundSelectedFeatures104.My.ThisAddIn.IDs.DockableWindwJunkai">
+<summary>
+Returns 'rkkc_AroundSelectedFeatures104_DockableWindow1', the id declared for Add-in DockableWindow class 'DockableWindwJunkai+AddinImpl'
+</summary>
+</member>
+<member name="M:AroundSelectedFeatures104.My.Internal.AddInStartupObject.GetThis">
+ <summary>
+ Expose this instance of Add-in class externally
+ </summary>
+</member>
+<member name="T:AroundSelectedFeatures104.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:AroundSelectedFeatures104.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:AroundSelectedFeatures104.My.Resources.Resources.Culture">
+<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="T:AroundSelectedFeatures104.DockableWindwJunkai">
+ <summary>
+ Designer class of the dockable window add-in. It contains user interfaces that
+ make up the dockable window.
+ </summary>
+</member>
+<member name="P:AroundSelectedFeatures104.DockableWindwJunkai.Hook">
+ <summary>
+ Host object of the dockable window
+ </summary> 
+</member>
+<member name="T:AroundSelectedFeatures104.DockableWindwJunkai.AddinImpl">
+ <summary>
+ Implementation class of the dockable window add-in. It is responsible for
+ creating and disposing the user interface class for the dockable window.
+ </summary>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.FindCommandAndExecute(ESRI.ArcGIS.Framework.IApplication,System.String)">
+<summary>プログラムにより、コマンドの検索およびクリックを行います。</summary>
+  
+<param name="application">IApplicationインタフェース</param>
+<param name="commandName">返したいコマンドの名前を示すSystem.String型の文字列(例: "esriFramework.HelpContentsCommand" または "{D74B2F25-AC90-11D2-87F8-0000F8751720}")</param>
+   
+<remarks>commandNameパラメータとして利用可能なCLSIDとProgIDの一覧については、EDNドキュメント(http://edndoc.esri.com/arcobjects/9.1/default.asp?URL=/arcobjects/9.1/ArcGISDevHelp/TechnicalDocuments/Guids/ArcMapIds.htm)を参照してください。</remarks>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.FlashGeometry(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Display.IRgbColor,ESRI.ArcGIS.Display.IDisplay,System.Int32)">
+<summary>画面上のジオメトリを点滅させます。ジオメトリ タイプは、ポリゴン、ポリライン、ポイント、またはマルチポイントのいずれかです。</summary>
+
+<param name="geometry">IGeometryインタフェース</param>
+<param name="color">IRgbColorインタフェース</param>
+<param name="display">IDisplayインタフェース</param>
+<param name="delay">一時停止する時間(ミリ秒)を示すSystem.Int32型の整数</param>
+ 
+<remarks></remarks>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.ClearSelectedMapFeatures(ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.Carto.IFeatureLayer)">
+<summary>指定されたIFeatureLayerのIActiveViewの選択フィーチャを解除します。</summary>
+ 
+<param name="activeView">IActiveViewインタフェース</param>
+<param name="featureLayer">IFeatureLayerインタフェース</param>
+ 
+<remarks></remarks>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.ZoomByRatioAndRecenter(ESRI.ArcGIS.Carto.IActiveView,System.Double,System.Double,System.Double)">
+<summary>Zoom in ActiveView using a ratio of the current extent and re-center based upon supplied x,y map coordinates.</summary>
+
+<param name="activeView">An IActiveView interface.</param>
+<param name="zoomRatio">A System.Double that is the ratio to zoom in. Less that 1 zooms in (Example: .75), greater than 1 zooms out (Example: 2).</param>
+<param name="xMap">A System.Double that is the x portion of a point in map units to re-center on.</param>
+<param name="yMap">A System.Double that is the y portion of a point in map units to re-center on.</param>
+ 
+<remarks>Both the width and height ratio of the zoomed area is preserved.</remarks>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.SaveToCsv(System.Windows.Forms.DataGridView)">
+ <summary>
+ Datagridviewの内容をcsvに保存
+ </summary>
+ <param name="tempDgv">csvで保存したいdatagridview</param>
+ <remarks></remarks>
+</member>
+<member name="M:AroundSelectedFeatures104.DockableWindwJunkai.CsvtoDgv">
+ <summary>
+ csvをDatagridviewに読み込む
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

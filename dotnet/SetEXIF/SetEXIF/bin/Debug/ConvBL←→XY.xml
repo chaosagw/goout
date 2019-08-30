@@ -1,0 +1,125 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ConvBL←→XY
+</name>
+</assembly>
+<members>
+<member name="M:ConvBL__XY.ConvBL_XY.Apg_rad2deg(System.Double)">
+	<summary>
+ ラジアンを度に変換
+ </summary>
+	<param name="r">ラジアン</param>
+	<returns>度</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_deg2rad(System.Double)">
+	<summary>
+ 度(分秒)をラジアンに変換
+ </summary>
+	<param name="d">度</param>
+	<returns>ラジアン</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_deg2dms(System.Double,System.String,System.Int32)">
+	<summary>
+ dd.ddからddmmss.ss形式に変換
+ </summary>
+	<param name="d">dd.dd</param>
+	<param name="div">区切り文字</param>
+	<param name="dig">桁数</param>
+	<returns>ddmmss.ss</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_dms2deg(System.String,System.String)">
+	<summary>
+ ddmmss.ssからdd.dd形式に変換する
+ </summary>
+	<param name="str">ddmmss.ss</param>
+	<param name="div">区切り文字</param>
+	<returns>dd.dd</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.App_RadTo(System.Double,System.Int32)">
+	<summary>
+ ラジアンから度、度分秒に変換
+ </summary>
+	<param name="val">ラジアン</param>
+	<param name="f">1：ラジアンそのまま　2：度　3：度分秒</param>
+	<returns>f=1：ラジアンそのまま　2：度　3：度分秒</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.App_ToRad(System.Double,System.Int32)">
+	<summary>
+ 度、度分秒からラジアンに変換
+ </summary>
+	<param name="val">度（ddd.dd）または　度分秒（dddmmss.ss）</param>
+	<param name="f">入力が1：ラジアンそのまま　2：度　3：度分秒</param>
+	<returns>ラジアン</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_rad2xy(System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Boolean)">
+	<summary>
+ 緯経度(ラジアン)をXY座標に変換
+ </summary>
+	<param name="r1">求点緯度（rad）</param>
+	<param name="r2">求点経度（rad）</param>
+	<param name="r1_0">原点緯度（rad）</param>
+	<param name="r2_0">原点経度（rad）</param>
+	<param name="x">求点Xが格納されます</param>
+	<param name="y">求点Yが格納されます</param>
+	<param name="jp">世界測地系：False　日本測地系：True</param>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_xy2rad(System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Boolean)">
+	<summary>
+ XY座標を緯経度(ラジアン)に変換
+ </summary>
+	<param name="x">求点X</param>
+	<param name="y">求点Y</param>
+	<param name="r1_0">原点緯度（rad）</param>
+	<param name="r2_0">原点経度（rad）</param>
+	<param name="r1">求点緯度（rad）が格納されます</param>
+	<param name="r2">求点経度（rad）が格納されます</param>
+	<param name="jp">世界測地系：False　日本測地系：True</param>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Get_GENTEN(System.Int32,System.Int32)">
+	<summary>
+ 座標系原点の情報
+ </summary>
+	<param name="no">座標系</param>
+	<param name="opt">0説明,1緯度,2経度</param>
+	<returns>座標系原点の情報(opt = 0：説明,1：緯度,2：経度</returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.Apg_ScaleFactor(System.Double,System.Double,System.Boolean)">
+	<summary>
+ m 緯度とy座標から縮尺係数を算出
+ </summary>
+	<param name="r1">緯度（rad）</param>
+	<param name="y">Y座標</param>
+	<param name="jp">世界測地系：False　日本測地系：True</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:ConvBL__XY.ConvBL_XY.ShishaGonew(System.Double,System.Int32)">
+	<summary>
+ 四捨五入します。
+ </summary>
+	<param name="dValue">丸め対象の倍精度浮動小数点数。</param>
+	<param name="iDigits">有効桁数</param>
+	<returns>四捨五入された数値。</returns>
+	<remarks></remarks>
+</member><member name="T:ConvBL__XY.ConvBL_XY">
+	<summary>
+ BLとXYの相互変換ライブラリ
+ </summary>
+	<remarks></remarks>
+</member><member name="P:ConvBL__XY.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ConvBL__XY.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ConvBL__XY.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

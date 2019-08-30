@@ -1,0 +1,15 @@
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.Resources.resources
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.vbproj.GenerateResource.Cache
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.xml
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\SwitchLyerLabels.dll
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\SwitchLyerLabels.pdb
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\SwitchLyerLabels.xml
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\ESRI.ArcGIS.Carto.dll
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\ESRI.ArcGIS.Editor.dll
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\ESRI.ArcGIS.Carto.xml
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\ESRI.ArcGIS.Editor.xml
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.dll
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.pdb
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\SwitchLyerLabels.dll.config
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\obj\Debug\SwitchLyerLabels.vbprojResolveAssemblyReference.cache
+C:\KKC\work\vs\Projects\SwitchLyerLabels\SwitchLyerLabels\bin\Debug\SwitchLyerLabels.esriAddIn

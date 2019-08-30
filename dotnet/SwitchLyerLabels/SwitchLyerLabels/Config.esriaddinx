@@ -1,0 +1,20 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>SwitchLyerLabels</Name>
+  <AddInID>{b9bef762-6bfa-4e19-8f85-35a3ef2216be}</AddInID>
+  <Description>Switching Label ON OFF.</Description>
+  <Version>1.0</Version>
+  <Image>Images\SwitchLyerLabels.png</Image>
+  <Author>agw</Author>
+  <Company>RKKC</Company>
+  <Date>2017/08/16</Date>
+  <Targets>
+    <Target name="Desktop" version="10.4" />
+  </Targets>
+  <AddIn language="CLR" library="SwitchLyerLabels.dll" namespace="SwitchLyerLabels">
+    <ArcMap>
+      <Commands>
+        <Button id="RKKC_SwitchLyerLabels_SwitchLbl" class="SwitchLbl" message="Switching label ONOFF." caption="SwitchLbl" tip="Switching label ONOFF." category="DevByAgw" image="Images\SwitchLbl.png" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
