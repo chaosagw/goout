@@ -23,7 +23,7 @@ t1 = time.time()
 os.chdir(in_path)
 env.workspace = in_path
 
-#kaoku_no.txtは処理前に家屋一覧NOと家屋番号でソートかける
+#kaoku_no.txtは処理前に家屋NOでソートかける
 try:
   del_list = os.path.join(in_path,"kaoku_no.txt")
   tmp_list = os.path.join(in_path,"tmp_list.csv")
